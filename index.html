@@ -257,8 +257,8 @@
 </div>
 
 <div class="post">
-    <a href="/2023/12/03/1/">
-        <h2 class="post-title">1</h2>
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+        <h2 class="post-title">永恒之黑漏洞复现</h2>
     </a>
     <div class="category-and-date">
         
@@ -274,7 +274,34 @@
     <div class="description">
         <div class="content" v-pre>
             
-            
+            <p>​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查<strong>长度</strong>是否合法，最终导致<strong>整数溢出</strong>，直接使用会<strong>引发内存破坏漏洞</strong>，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞<strong>无须权限</strong>即可实现远程代码执行，受黑客攻击的目标系统<strong>只需开机在线即可能被入侵</strong>。<br>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63610715/article/details/133847253">https://blog.csdn.net/weixin_63610715/article/details/133847253</a></p>
+<p><strong>1.关闭防火墙</strong></p>
+<p>关闭实时防护：widows设置-更新与安全-windows安全中心-病毒和威胁防护</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203155135269.png" alt="image-20231203155135269"></p>
+<p><strong>2.检测互联</strong></p>
+<p>确保攻击机与被攻击机win10可以互联通网，使用kali和win10互相ping。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160450943.png" alt="image-20231203160450943"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160023040.png" alt="image-20231203160023040"></p>
+<p>ping成功界面</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160327479.png" alt="image-20231203160327479"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160354245.png" alt="image-20231203160354245"></p>
+<p><strong>3.验证漏洞</strong></p>
+<p>脚本路径：D:\AAAAApeixun\永恒之黑python脚本</p>
+<p>本机文件自带环境</p>
+<p>工具下载地址：<a target="_blank" rel="noopener" href="https://github.com/eerykitty/CVE-2020-0796-PoC">https://github.com/eerykitty/CVE-2020-0796-PoC</a></p>
+<p>将工具下载后拖至kali中进行解压，进行蓝屏测试。（也可在物理机解压后移入kali机）</p>
+<p>kali终端依次执行以下命令</p>
+<p>unzip CVE-2020-0796-PoC-master.zip</p>
+<p>cd CVE-2020-0796-PoC-master</p>
+<p> python CVE-2020-0796.py 靶机IP地址（或输入.&#x2F;CVE-2020-0796.py 靶机IP地址）</p>
+<p>如果出现以下情况，使用以下命令进行安装。</p>
+<p>pip install ntlm_auth</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203164416864.png" alt="image-20231203164416864"></p>
+<p>kali输入攻击命令运行</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163109103.png" alt="image-20231203163109103"></p>
+<p>靶机状态：崩溃蓝屏，强制重启，永恒之黑漏洞复现成功！</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163353920.png" alt="image-20231203163353920"></p>
+
             
         </div>
     </div>
@@ -283,7 +310,7 @@
         
         
     </div>
-    <a href="/2023/12/03/1/" class="go-post">阅读全文</a>
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
