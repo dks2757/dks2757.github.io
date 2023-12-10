@@ -33,24 +33,24 @@
         <hr>
     </div>
     <div class="post-content">
-        <p><img src="/ssh-denglu.assets/1701411207475-8c951100-2836-4f82-bd39-415b43e43738.png"></p>
+        <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101908107.png"></p>
 <p><strong>1.提权</strong></p>
 <p>本次使用的机器是centos7，本次实验需要root用户权限，所以第一件事是提权。</p>
-<p><img src="/ssh-denglu.assets/image-20231205204945816.png" alt="image-20231205204945816"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101908917.png" alt="image-20231205204945816"></p>
 <p><strong>2.实验开始</strong></p>
 <p>再依次输入上述命令，开机自启动</p>
-<p><img src="/ssh-denglu.assets/1701411256019-207bb265-4015-4afb-9aa3-7772ea54393f.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101908255.png" alt="img"></p>
 <p>现在启动</p>
-<p><img src="/ssh-denglu.assets/1701411294440-4c59588e-f0f3-4459-88ea-7ca6deffc904.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101908942.png" alt="img"></p>
 <p>进入目标目录文件（上述命令中不是“vim“而是”vi”）</p>
 <p><strong>vi</strong> &#x2F;etc&#x2F;ssh&#x2F;ssh_config</p>
 <p>按Esc，输入：set nu命令显示行号,移到38行 ，将PermitRootlogin后的no改为yes。随后再按Esc，输入：wq！，回车，保存退出。</p>
 <p><img src="/ssh-denglu.assets/image-20231206101821967.png" alt="image-20231206101821967"></p>
 <p>重启服务</p>
-<p><img src="/ssh-denglu.assets/1701411374570-2fe11a1e-f788-4c67-bcec-84e70c9b1438.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101909421.png" alt="img"></p>
 <p>在物理机输入连接虚拟机的IP地址的命令，随后可进入虚拟机</p>
-<p><img src="/ssh-denglu.assets/1701418436239-fc54fe84-cc37-4645-913a-1873056ad797.png" alt="img"></p>
-<p><img src="/ssh-denglu.assets/1701418340184-2c63d6dc-e892-4bc3-99cd-84ad10573773.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101909135.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101909179.png" alt="img"></p>
 
     </div>
 
