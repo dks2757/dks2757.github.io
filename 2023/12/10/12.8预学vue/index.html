@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>12.8预学vue | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="搭建环境  dev 预构建   输入弹出的网址   将这两列代码放入main.js import ElementPlus from ‘element-plus’; import ‘element-plus&#x2F;dist&#x2F;index.css’ 之后 Ctrl+s保存  将原网站代码删除干净  放入从 https:&#x2F;&#x2F;element-plus.org&#x2F;zh-CN&#x2F; 复制过来的代码按钮。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12.8预学vue">
+<meta property="og:url" content="http://example.com/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搭建环境  dev 预构建   输入弹出的网址   将这两列代码放入main.js import ElementPlus from ‘element-plus’; import ‘element-plus&#x2F;dist&#x2F;index.css’ 之后 Ctrl+s保存  将原网站代码删除干净  放入从 https:&#x2F;&#x2F;element-plus.org&#x2F;zh-CN&#x2F; 复制过来的代码按钮。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120093.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120659.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120852.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120323.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121676.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121766.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121148.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121723.png">
+<meta property="og:image" content="http://example.com/12.8%E9%A2%84%E5%AD%A6vue.assets/1702006241434-ee47718d-e708-4968-a696-9a676d1b902b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121534.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121272.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121961.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121088.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121787.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122202.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122953.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122287.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122577.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122512.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122683.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122198.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122970.png">
+<meta property="article:published_time" content="2023-12-10T03:19:33.000Z">
+<meta property="article:modified_time" content="2023-12-10T03:30:12.310Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120093.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="12.8-12.8预学vue" class="h-entry article article-type-12.8" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/" class="article-date">
+  <time class="dt-published" datetime="2023-12-10T03:19:33.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      12.8预学vue
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>搭建环境</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120093.png" alt="img"></p>
+<p>dev 预构建</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120659.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120852.png" alt="img"></p>
+<p>输入弹出的网址</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120323.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121676.png" alt="img"></p>
+<p>将这两列代码放入main.js</p>
+<p>import ElementPlus from ‘element-plus’;</p>
+<p>import ‘element-plus&#x2F;dist&#x2F;index.css’</p>
+<p>之后 Ctrl+s保存</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121766.png" alt="img"></p>
+<p>将原网站代码删除干净</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121148.png" alt="img"></p>
+<p>放入从</p>
+<p><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/">https://element-plus.org/zh-CN/</a></p>
+<p>复制过来的代码按钮。</p>
+<p>按钮代码如下：</p>
+<script setup>
+
+import { ElButton } from 'element-plus'
+
+</script>
+
+
+
+<template>
+
+<p><el-button type="danger">Danger</el-button></p>
+</template>
+
+
+
+<style scoped>
+
+</style>
+
+<p>效果：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121723.png" alt="img"></p>
+<p><img src="/12.8%E9%A2%84%E5%AD%A6vue.assets/1702006241434-ee47718d-e708-4968-a696-9a676d1b902b.png" alt="img"></p>
+<p>vue资料链接： <a target="_blank" rel="noopener" href="https://www.yuque.com/sunwu-pbywz/yeyyil/nsags6i65tgtoi9k">https://www.yuque.com/sunwu-pbywz/yeyyil/nsags6i65tgtoi9k</a></p>
+<h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121255.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121534.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121272.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121961.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121088.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121787.png" alt="img"></p>
+<p>官网: <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">https://cn.vuejs.org/</a><br><strong>vue2学习</strong><br>**官网:**<a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/v2/guide/">https://v2.cn.vuejs.org/v2/guide/</a><br>学习视频地址:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zy4y1K7SH">https://www.bilibili.com/video/BV1Zy4y1K7SH</a><br><strong>01_初识vue</strong><br>使用cscode中!创建html模板，引入开发版本的vue </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122202.png" alt="img"></p>
+<p>为了方便开发安装浏览器vue的插件</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122953.png" alt="img"></p>
+<p>shift+刷新&#x3D;页面强制刷新<br>实例和容器一一对应<br>v-bind单向绑定<br>v-model双向绑定，但是只能用在表单类型元素<br><strong>01.5_MVVM</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122287.png" alt="img"></p>
+<p><strong>事件处理</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122577.png" alt="img"></p>
+<p>修饰符可以连续用 @click.prevent.stop </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122512.png" alt="img"></p>
+<p><strong>Vue-cli(第61节)</strong><br><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/#%E8%B5%B7%E6%AD%A5">https://cli.vuejs.org/zh/#%E8%B5%B7%E6%AD%A5</a><br><strong>安装</strong><br>npm config set refistry <a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm install -g @vue&#x2F;cli到项目目录<br>vue create xxxx<br>npm run serve<br>选择vue2</p>
+<p><strong>Vue UI 组件库</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122683.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122198.png" alt="img"></p>
+<p>按需引用</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122970.png" alt="img"></p>
+<p><strong>vue3</strong><br>vue3引入element-plus<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51196135/article/details/125199777">https://blog.csdn.net/qq_51196135/article/details/125199777</a><br><strong>新的开始</strong></p>
+<p>npm create vue@latest</p>
+<p>npm install element-plus –save</p>
+<p>npm install -D unplugin-vue-components unplugin-auto-import</p>
+<p>main.js</p>
+<p>import { createApp } from ‘vue’</p>
+<p>import App from ‘.&#x2F;App.vue’</p>
+<p>import ElementPlus from ‘element-plus’;</p>
+<p>import ‘element-plus&#x2F;dist&#x2F;index.css’</p>
+<p>createApp(App).mount(‘#app’)</p>
+<p>src&#x2F;App.vue是入口文件</p>
+<script setup></script>。 //导包
+
+<p><template></template>。 &#x2F;&#x2F;html部分</p>
+<style scoped></style> //css部分
+
+<p>vite.config.js</p>
+<p>import { fileURLToPath, URL } from ‘node:url’</p>
+<p>import { defineConfig } from ‘vite’</p>
+<p>import vue from ‘@vitejs&#x2F;plugin-vue’</p>
+<p>import AutoImport from ‘unplugin-auto-import&#x2F;vite’</p>
+<p>import Components from ‘unplugin-vue-components&#x2F;vite’</p>
+<p>import { ElementPlusResolver } from ‘unplugin-vue-components&#x2F;resolvers’</p>
+<p>&#x2F;&#x2F; <a target="_blank" rel="noopener" href="https://vitejs.dev/config/">https://vitejs.dev/config/</a></p>
+<p>export default defineConfig({</p>
+<p> plugins: [</p>
+<p> vue(),</p>
+<p> &#x2F;&#x2F; …</p>
+<p> AutoImport({</p>
+<p> resolvers: [ElementPlusResolver()],</p>
+<p> }),</p>
+<p> Components({</p>
+<p> resolvers: [ElementPlusResolver()],</p>
+<p> }),</p>
+<p> ],</p>
+<p> resolve: {</p>
+<p> alias: {</p>
+<p> ‘@’: fileURLToPath(new URL(‘.&#x2F;src’, import.meta.url))</p>
+<p> }</p>
+<p> }</p>
+<p>})</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/" data-id="clpz6t0kf0002hcry1e4f7013" data-title="12.8预学vue" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">12.7域名解析和html5表单</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

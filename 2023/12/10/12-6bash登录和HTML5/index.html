@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>12.6bash登录和HTML5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="centos7安装bash脚本  完成安装   HTML5简称超5（超文本传输协议） https:&#x2F;&#x2F;www.runoob.com&#x2F; 新建文本文档，后缀改为html，          style是放css的地方，JavaScript简称JS， id节点选择器，用来连接按钮和视频。  点击触发函数，onlick  div：盒子，div可以套div，js可以把静态的东西变为动态，html基本布局，框">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12.6bash登录和HTML5">
+<meta property="og:url" content="http://example.com/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="centos7安装bash脚本  完成安装   HTML5简称超5（超文本传输协议） https:&#x2F;&#x2F;www.runoob.com&#x2F; 新建文本文档，后缀改为html，          style是放css的地方，JavaScript简称JS， id节点选择器，用来连接按钮和视频。  点击触发函数，onlick  div：盒子，div可以套div，js可以把静态的东西变为动态，html基本布局，框">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101042757.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101034625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101042874.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035254.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035906.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035642.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035372.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035008.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035845.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035428.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035862.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035395.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035562.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035199.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035272.png">
+<meta property="article:published_time" content="2023-12-10T02:33:34.000Z">
+<meta property="article:modified_time" content="2023-12-10T03:03:31.253Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101042757.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-12-6bash登录和HTML5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/" class="article-date">
+  <time class="dt-published" datetime="2023-12-10T02:33:34.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      12.6bash登录和HTML5
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>centos7安装bash脚本</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101042757.png" alt="img"></p>
+<p>完成安装</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101034625.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101042874.png" alt="img"></p>
+<p><strong>HTML5简称超5（超文本传输协议）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/"><strong>https://www.runoob.com/</strong></a></p>
+<p>新建文本文档，后缀改为html，</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035254.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035906.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035642.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035372.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035008.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035845.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035428.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035862.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035395.png" alt="img"></p>
+<p>style是放css的地方，JavaScript简称JS，</p>
+<p>id节点选择器，用来连接按钮和视频。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035080.png" alt="img"></p>
+<p>点击触发函数，onlick</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035562.png" alt="img"></p>
+<p>div：盒子，div可以套div，js可以把静态的东西变为动态，html基本布局，框架就是盒子的布局，px是像素，控制大小。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035199.png" alt="img"></p>
+<p>自制一个HTML网页</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>12.6html5页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>简单的HTML5页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css">  </span></span><br><span class="line"><span class="language-css">            <span class="selector-tag">body</span> &#123;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">font-family</span>: Arial, sans-serif;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">margin</span>: <span class="number">0</span>;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">padding</span>: <span class="number">0</span>;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;  </span></span><br><span class="line"><span class="language-css">            &#125;  </span></span><br><span class="line"><span class="language-css">            <span class="selector-tag">header</span> &#123;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">background-color</span>: <span class="number">#333</span>;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">color</span>: white;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">text-align</span>: center;  </span></span><br><span class="line"><span class="language-css">            &#125;  </span></span><br><span class="line"><span class="language-css">            <span class="selector-tag">main</span> &#123;  </span></span><br><span class="line"><span class="language-css">                <span class="attribute">margin</span>: <span class="number">15px</span>;  </span></span><br><span class="line"><span class="language-css">            &#125;  </span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">header</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>欢迎来到我的网页！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">header</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">main</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个简单的HTML5页面。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>它包含一个标题（header）和一个主要内容区域（main）。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">main</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><!DOCTYPE html>：这是HTML5的文档声明，告诉浏览器这是一个HTML5文档。</li>
+<li><html>：这是HTML文档的根元素。</li>
+<li><head>：这是HTML文档的头部区域，包含了文档的元数据和引用的外部资源，例如CSS样式和JavaScript脚本。</li>
+<li><meta charset="UTF-8">：这是设置文档字符编码的元数据，这里设置为UTF-8，可以支持多种语言字符。</li>
+<li><title>：这是设置网页标题的元素，标题将显示在浏览器标签页上。</li>
+<li><style>：这是内嵌CSS样式的开始和结束标记，中间的CSS代码将应用到HTML文档中。</li>
+<li>body：这是HTML文档的主体部分，包含了网页的所有内容。</li>
+<li><header>：这是HTML5中新增的语义标签，用于定义页面或区域的头部区域，通常包含标题、标志、搜索框等内容。</li>
+<li><h1>：这是HTML中的一级标题标签，通常用于显示重要的标题文本。</li>
+<li><main>：这是HTML5中新增的语义标签，用于定义页面的主要内容区域，通常包含页面主要内容。</li>
+<li><p>：这是HTML中的段落标签，用于定义文本段落。</li>
+</ol>
+<p>整个代码是一个简单的HTML5页面结构，包含了文档声明、头部信息、主体内容和样式信息等。其中，通过使用HTML5新增的语义标签 <header> 和 <main>，使得页面的结构更加清晰和易于维护。同时，通过内嵌CSS样式，对页面的外观进行了简单的设置。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101035272.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/" data-id="clpz6t0ka0000hcryb3t0cu7d" data-title="12.6bash登录和HTML5" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          12.7域名解析和html5表单
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

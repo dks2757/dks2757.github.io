@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>永恒之黑漏洞复现 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查长度是否合法，最终导致整数溢出，直接使用会引发内存破坏漏洞，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞无须权限即可实现远程代码执行，受黑客攻击的目标系统只需开机在线即可能被入侵。参考链接：https:&#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="永恒之黑漏洞复现">
+<meta property="og:url" content="http://example.com/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查长度是否合法，最终导致整数溢出，直接使用会引发内存破坏漏洞，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞无须权限即可实现远程代码执行，受黑客攻击的目标系统只需开机在线即可能被入侵。参考链接：https:&#x2F;&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203155135269.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160450943.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160023040.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160327479.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160354245.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203164416864.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163109103.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163353920.png">
+<meta property="article:published_time" content="2023-12-03T07:09:01.000Z">
+<meta property="article:modified_time" content="2023-12-04T02:49:54.572Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203155135269.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-永恒之黑漏洞复现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-12-03T07:09:01.000Z" itemprop="datePublished">2023-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      永恒之黑漏洞复现
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查<strong>长度</strong>是否合法，最终导致<strong>整数溢出</strong>，直接使用会<strong>引发内存破坏漏洞</strong>，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞<strong>无须权限</strong>即可实现远程代码执行，受黑客攻击的目标系统<strong>只需开机在线即可能被入侵</strong>。<br>参考链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#">https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63610715/article/details/133847253">https://blog.csdn.net/weixin_63610715/article/details/133847253</a></p>
+<p><strong>1.关闭被攻击机防火墙（攻击机与被攻击机需在同一网段）</strong></p>
+<p>关闭实时防护：widows设置-更新与安全-windows安全中心-病毒和威胁防护</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203155135269.png" alt="image-20231203155135269"></p>
+<p><strong>2.检测互联</strong></p>
+<p>确保攻击机与被攻击机win10可以互联通网，使用kali和win10互相ping。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160450943.png" alt="image-20231203160450943"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160023040.png" alt="image-20231203160023040"></p>
+<p>ping成功界面</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160327479.png" alt="image-20231203160327479"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203160354245.png" alt="image-20231203160354245"></p>
+<p><strong>3.验证漏洞</strong></p>
+<p>脚本路径：D:\AAAAApeixun\永恒之黑python脚本</p>
+<p>本机文件自带环境</p>
+<p>工具下载地址：<a target="_blank" rel="noopener" href="https://github.com/eerykitty/CVE-2020-0796-PoC">https://github.com/eerykitty/CVE-2020-0796-PoC</a></p>
+<p>将工具下载后拖至kali中进行解压，进行蓝屏测试。（也可在物理机解压后移入kali机）</p>
+<p>kali终端依次执行以下命令</p>
+<p>unzip CVE-2020-0796-PoC-master.zip</p>
+<p>cd CVE-2020-0796-PoC-master</p>
+<p> python CVE-2020-0796.py 靶机IP地址（或输入.&#x2F;CVE-2020-0796.py 靶机IP地址）</p>
+<p>如果出现以下情况，使用以下命令进行安装。</p>
+<p>pip install ntlm_auth</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203164416864.png" alt="image-20231203164416864"></p>
+<p>kali输入攻击命令运行</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163109103.png" alt="image-20231203163109103"></p>
+<p>靶机状态：崩溃蓝屏，强制重启，永恒之黑漏洞复现成功！</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163353920.png" alt="image-20231203163353920"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" data-id="clpz6t0kl000bhcryf8yz8229" data-title="永恒之黑漏洞复现" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/03/AhMyth%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AhMyth安卓病毒监听
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python study</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

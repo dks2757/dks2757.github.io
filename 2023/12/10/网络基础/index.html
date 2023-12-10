@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>网络基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="以太网适配器：网线接口 Virtualbox：虚拟网络 以太网4 VMware Network：虚拟机网络以及网关 无线局域网适配器 WLAN：常规ip地址  IPV4地址： 常规IP地址，一共四段，分别叫ABCD段 8.8.8.8  （2的8次方&#x3D;255） 每一段最大位数为255 约定俗成最后一位 .1是网关 .255是广播地址 子网掩码：子网掩码是一个32位地址，用于屏蔽IP地址的一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络基础">
+<meta property="og:url" content="http://example.com/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以太网适配器：网线接口 Virtualbox：虚拟网络 以太网4 VMware Network：虚拟机网络以及网关 无线局域网适配器 WLAN：常规ip地址  IPV4地址： 常规IP地址，一共四段，分别叫ABCD段 8.8.8.8  （2的8次方&#x3D;255） 每一段最大位数为255 约定俗成最后一位 .1是网关 .255是广播地址 子网掩码：子网掩码是一个32位地址，用于屏蔽IP地址的一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959832.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959204.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959179.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959784.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959215.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959094.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959599.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959956.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959959.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959473.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959106.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959953.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000140.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000201.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000674.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025710.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025596.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025147.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000679.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000368.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101026413.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000477.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000210.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000100.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000086.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000385.png">
+<meta property="article:published_time" content="2023-12-10T01:58:33.000Z">
+<meta property="article:modified_time" content="2023-12-10T02:34:09.170Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959832.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-网络基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2023-12-10T01:58:33.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      网络基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>以太网适配器：网线接口</p>
+<p>Virtualbox：虚拟网络</p>
+<p>以太网4</p>
+<p>VMware Network：虚拟机网络以及网关</p>
+<p>无线局域网适配器 WLAN：常规ip地址</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959832.png" alt="img"></p>
+<p>IPV4地址：</p>
+<p>常规IP地址，一共四段，分别叫ABCD段</p>
+<p>8.8.8.8  （2的8次方&#x3D;255）</p>
+<p>每一段最大位数为255</p>
+<p>约定俗成最后一位 .1是网关 .255是广播地址</p>
+<p>子网掩码：子网掩码是一个32位地址，用于屏蔽IP地址的一部分以区别网络标识和主机标识，并说明该IP地址是在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B1%80%E5%9F%9F%E7%BD%91/98626?fromModule=lemma_inlink">局域网</a>上，还是在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%BF%E5%9F%9F%E7%BD%91/422004?fromModule=lemma_inlink">广域网</a>上。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959204.png" alt="img"></p>
+<p><strong>三个私网网段</strong></p>
+<p><strong>A:10.0.0.0 - 10.255.255.255</strong></p>
+<p><strong>B:172.16.0.0-173.31.255.255</strong></p>
+<p><strong>C:192.168.0.0-192.168.255.255</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959179.png" alt="img">公网（外网)   私网(内网）</p>
+<p>光猫：将光纤转换为电信号</p>
+<p>ap：路由器，即内网，内网ip任何人都可以用</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959784.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959215.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959094.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959599.png" alt="img"></p>
+<p>动态路由会变换ip找到最短路径，静态则不变。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959956.png" alt="img"></p>
+<p>两个相同ip地址的情况下，不确定性较大，一般优先静态ip，出现一个不能上网或两个都不能网。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959959.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959473.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959638.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959106.png" alt="img"></p>
+<p>网络位固定，主机位可以改变<img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959953.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000140.png" alt="img"></p>
+<p>后面七位可分配</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000201.png" alt="img"></p>
+<p>在同一个路由器下，才会互通</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000674.png" alt="img"></p>
+<p>路由器1连接路由器2提前配置好</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025710.png" alt="img"></p>
+<p><strong>代理</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025596.png" alt="img"></p>
+<p>使用桥接模式最好手动选择好驱动模块，不选自动，容易出错。</p>
+<p>桥接模式的虚拟机等价于另一台物理机，IP地址不会与本物理机相同</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101025147.png" alt="img"></p>
+<p>NAT模式的IP地址看设置</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000679.png" alt="img"></p>
+<p>pc3能访问pc1，但是pc1不访问pc3</p>
+<p>正如你能访问百度，但百度不能访问你</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000368.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101026413.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000477.png" alt="img"></p>
+<p>解决防火墙抵御bug的解决方法</p>
+<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000210.png" alt="img"></p>
+<p>s：服务器</p>
+<p>c：客服端</p>
+<p>反向shell（类似于大灰狼远控原理）：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000100.png" alt="img"></p>
+<p>正向shell可能会出现bug，会有window或者Linux的防火墙抵御来自sever的监听。但是反向shell不会，因为二者连接方式不同，反向shell是客户端c连接服务器s出栈，正向shell是服务器s连接客户端c入栈。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000086.png" alt="img"></p>
+<p>解决防火墙抵御bug的解决方法</p>
+<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000385.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" data-id="clpz6t0kl000chcrybizh949w" data-title="网络基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          12.6bash登录和HTML5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Wireshark抓包工具</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
