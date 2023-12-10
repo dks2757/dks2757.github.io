@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>12.8预学vue | Hexo</title>
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>12.8预学vue</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/10
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>搭建环境</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120093.png" alt="img"></p>
+<p>dev 预构建</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120659.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120852.png" alt="img"></p>
+<p>输入弹出的网址</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101120323.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121676.png" alt="img"></p>
+<p>将这两列代码放入main.js</p>
+<p>import ElementPlus from ‘element-plus’;</p>
+<p>import ‘element-plus&#x2F;dist&#x2F;index.css’</p>
+<p>之后 Ctrl+s保存</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121766.png" alt="img"></p>
+<p>将原网站代码删除干净</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121148.png" alt="img"></p>
+<p>放入从</p>
+<p><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/">https://element-plus.org/zh-CN/</a></p>
+<p>复制过来的代码按钮。</p>
+<p>按钮代码如下：</p>
+<script setup>
+
+import { ElButton } from 'element-plus'
+
+</script>
+
+
+
+<template>
+
+<p><el-button type="danger">Danger</el-button></p>
+</template>
+
+
+
+<style scoped>
+
+</style>
+
+<p>效果：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121723.png" alt="img"></p>
+<p><img src="/12.8%E9%A2%84%E5%AD%A6vue.assets/1702006241434-ee47718d-e708-4968-a696-9a676d1b902b.png" alt="img"></p>
+<p>vue资料链接： <a target="_blank" rel="noopener" href="https://www.yuque.com/sunwu-pbywz/yeyyil/nsags6i65tgtoi9k">https://www.yuque.com/sunwu-pbywz/yeyyil/nsags6i65tgtoi9k</a></p>
+<h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121255.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121534.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121272.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121961.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121088.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101121787.png" alt="img"></p>
+<p>官网: <a target="_blank" rel="noopener" href="https://cn.vuejs.org/">https://cn.vuejs.org/</a><br><strong>vue2学习</strong><br>**官网:**<a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/v2/guide/">https://v2.cn.vuejs.org/v2/guide/</a><br>学习视频地址:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zy4y1K7SH">https://www.bilibili.com/video/BV1Zy4y1K7SH</a><br><strong>01_初识vue</strong><br>使用cscode中!创建html模板，引入开发版本的vue </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122202.png" alt="img"></p>
+<p>为了方便开发安装浏览器vue的插件</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122953.png" alt="img"></p>
+<p>shift+刷新&#x3D;页面强制刷新<br>实例和容器一一对应<br>v-bind单向绑定<br>v-model双向绑定，但是只能用在表单类型元素<br><strong>01.5_MVVM</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122287.png" alt="img"></p>
+<p><strong>事件处理</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122577.png" alt="img"></p>
+<p>修饰符可以连续用 @click.prevent.stop </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122512.png" alt="img"></p>
+<p><strong>Vue-cli(第61节)</strong><br><a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/#%E8%B5%B7%E6%AD%A5">https://cli.vuejs.org/zh/#%E8%B5%B7%E6%AD%A5</a><br><strong>安装</strong><br>npm config set refistry <a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm install -g @vue&#x2F;cli到项目目录<br>vue create xxxx<br>npm run serve<br>选择vue2</p>
+<p><strong>Vue UI 组件库</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122683.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122198.png" alt="img"></p>
+<p>按需引用</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101122970.png" alt="img"></p>
+<p><strong>vue3</strong><br>vue3引入element-plus<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51196135/article/details/125199777">https://blog.csdn.net/qq_51196135/article/details/125199777</a><br><strong>新的开始</strong></p>
+<p>npm create vue@latest</p>
+<p>npm install element-plus –save</p>
+<p>npm install -D unplugin-vue-components unplugin-auto-import</p>
+<p>main.js</p>
+<p>import { createApp } from ‘vue’</p>
+<p>import App from ‘.&#x2F;App.vue’</p>
+<p>import ElementPlus from ‘element-plus’;</p>
+<p>import ‘element-plus&#x2F;dist&#x2F;index.css’</p>
+<p>createApp(App).mount(‘#app’)</p>
+<p>src&#x2F;App.vue是入口文件</p>
+<script setup></script>。 //导包
+
+<p><template></template>。 &#x2F;&#x2F;html部分</p>
+<style scoped></style> //css部分
+
+<p>vite.config.js</p>
+<p>import { fileURLToPath, URL } from ‘node:url’</p>
+<p>import { defineConfig } from ‘vite’</p>
+<p>import vue from ‘@vitejs&#x2F;plugin-vue’</p>
+<p>import AutoImport from ‘unplugin-auto-import&#x2F;vite’</p>
+<p>import Components from ‘unplugin-vue-components&#x2F;vite’</p>
+<p>import { ElementPlusResolver } from ‘unplugin-vue-components&#x2F;resolvers’</p>
+<p>&#x2F;&#x2F; <a target="_blank" rel="noopener" href="https://vitejs.dev/config/">https://vitejs.dev/config/</a></p>
+<p>export default defineConfig({</p>
+<p> plugins: [</p>
+<p> vue(),</p>
+<p> &#x2F;&#x2F; …</p>
+<p> AutoImport({</p>
+<p> resolvers: [ElementPlusResolver()],</p>
+<p> }),</p>
+<p> Components({</p>
+<p> resolvers: [ElementPlusResolver()],</p>
+<p> }),</p>
+<p> ],</p>
+<p> resolve: {</p>
+<p> alias: {</p>
+<p> ‘@’: fileURLToPath(new URL(‘.&#x2F;src’, import.meta.url))</p>
+<p> }</p>
+<p> }</p>
+<p>})</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
