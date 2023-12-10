@@ -1,169 +1,228 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>python study | Hexo</title>
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
+  <meta charset="utf-8">
+  
+  
+  <title>python study | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1 渗透基本介绍1-1渗透测试基本介绍 服务器：如windows、Linux等操作系统 中间件：apache等服务器   信息收集时间占比大，信息收集的越多可攻击的点越多。 整站映射是分析其技术、脚本语言等信息。 漏洞扫描，一般有自己或公司的漏洞扫描软件。  1-2常见的渗透工具 1-3HTTP状态码获取  2 python2-1 什么是python编译型语言（c、go等） 解释型编程语言（pyt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python study">
+<meta property="og:url" content="http://example.com/2023/12/03/python%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 渗透基本介绍1-1渗透测试基本介绍 服务器：如windows、Linux等操作系统 中间件：apache等服务器   信息收集时间占比大，信息收集的越多可攻击的点越多。 整站映射是分析其技术、脚本语言等信息。 漏洞扫描，一般有自己或公司的漏洞扫描软件。  1-2常见的渗透工具 1-3HTTP状态码获取  2 python2-1 什么是python编译型语言（c、go等） 解释型编程语言（pyt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701162974376-f20c6948-1a33-461d-a8d2-2d3d2f42f8fa-1701573675455169.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701163150627-1a0a64d5-a9d6-4241-b72e-4569378626c0-1701573675456171.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701163401715-1ff145e4-8c22-4143-a1ca-e8c889d8f5cf-1701573675456173.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701163523008-30ead8f6-3bf9-4e6a-8502-cc59d6940237-1701573675456175.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701164022385-78d644eb-425a-48cc-9ab9-c563314b8cd7-1701573675456177.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701174863677-bf11387e-68b9-45c5-8db1-c843e04e33f8-1701573675456179.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701175440402-bf01a9da-1c19-4090-a864-d46a9f8121e2-1701573675456181.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701175477702-df6b7ba7-cae2-4bd3-a815-599f306035e2-1701573675456183.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701175502564-0416ac03-89a7-49fe-86fd-88722522e1e3-1701573675456185.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701175520853-87b2aaa4-6d6e-42f1-87ab-9d287bd6bbff-1701573675456189.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701176072609-223f79d2-d80d-40c9-9e9b-757fef3e7fdf-1701573675456187.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701176889344-66fca36c-44af-4a50-bab4-ce7a5028a2f4-1701573675456191.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701176868232-085f14e8-0e96-4602-b451-3b97bbcc7b4b-1701573675457193.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701186049399-8730c9f9-cbb9-41ce-8b6d-0c13f1a114bc-1701573675457195.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701186272181-57c416cd-5cc5-4ff7-bc81-461b866b2132-1701573675457197.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701186115400-1c09b308-8f80-4086-845f-d02cb54d2e7c-1701573675457199.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701177469408-bd32547b-f796-4f83-8356-fcbb832db6fa-1701573675457201.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701188425853-f9fc2619-7d30-4f5e-9414-cd5cc0f0d347-1701573675457203.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701177527987-986ad0ea-71b4-4b86-87a2-fe27aabd181d-1701573675457205.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701177611719-47f2c247-a89b-46bd-83a8-9c75d63ca5bc-1701573675457207.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701177678049-f7b0edd6-a3ef-4840-acb2-5b68d94bfde5-1701573675457209.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701177719647-3c511ac1-ea82-4899-b544-d4db229e1329-1701573675457211.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701188259725-125b6c13-fe1e-441e-a3de-e1897ab4b904-1701573675457213.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701186475277-ee98c4ad-efba-48ee-9b05-8298a3d5b038-1701573675457215.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701187547679-a292f431-b339-408e-9892-60c987dec5a8-1701573675457217.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701187161359-c9afbd84-8dbe-45ab-ad0f-3cc5a595c8da-1701573675457219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701187338105-a72fc1cc-7fc3-4f4e-8597-b16b96038651-1701573675457223.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701187523905-9a1f343e-3e42-4bbb-9338-b11926de8562-1701573675457221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701187477621-c4d180cb-2206-4224-84d8-131bb6dac158-1701573675457225.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701221620896-3a4d96af-9709-4d33-84dd-1d2a6c2a0c61-1701573675457227.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701222459052-faafb7ba-c51c-4b29-b715-a73fa16501b1-1701573675457229.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701223586426-05e7db54-6364-42b8-9452-e43ba706918d-1701573675458231.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701223646435-a3e4fd89-55ec-4d81-89ba-46656601606b-1701573675458233.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701223672522-e8310b64-8525-454c-9ee2-f81b9003f884-1701573675458235.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701225433201-da0370bb-6e46-4ea8-8de0-bbaf946d6fe7-1701573675458237.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701225165376-53479a39-96ba-426d-9cfa-d1d1d6c3fc7a-1701573675458239.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701225618047-075326f8-467b-4565-a94b-2439451d2cf4-1701573675458241.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701239025384-574584e9-c75c-41ec-9cbb-93257f775a27-1701573675458243.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701264972880-c442fb8d-257e-4ef3-8ac8-66fb793079e9-1701573675458245.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701264882133-94cc2924-b1ca-4dbe-9efe-78cdcb09ab88-1701573675458247.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265964824-9f04aed6-c0b2-4b0b-9bb3-733c1c618522-1701573675458249.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265334520-3236b6e4-7651-48a9-b034-74c9f2aaa68d-1701573675458251.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265792413-576a9c4e-9e0a-474d-9706-47291b9bb388-1701573675458253.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265228528-2db05e92-f69f-45f6-b9ef-48b5761c23d8-1701573675458255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266574635-a2513e18-584c-460f-8056-4eb971db6314-1701573675458257.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266721095-30a448c1-efc1-4198-bb77-03fde7a54ea5-1701573675458259.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266589425-a373534b-3e76-40b7-a8e5-5933adc18136-1701573675458261.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266741043-914af260-daf7-4932-9ada-aaafdab3421a-1701573675458263.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266674970-92ceaa1e-4d3e-4487-9eed-e966f456899c-1701573675458265.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701266626097-82929232-7dc1-43d1-a654-9b2db5c266d2-1701573675458267.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265964824-9f04aed6-c0b2-4b0b-9bb3-733c1c618522-1701573675458249.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701393549037-f59ed5cb-4b05-4e04-9bd4-76b1b3617696-1701573675458269.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265334520-3236b6e4-7651-48a9-b034-74c9f2aaa68d-1701573675458251.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701393859997-8b2ddd50-d970-4265-99c7-63fddd01175d-1701573675458271.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265792413-576a9c4e-9e0a-474d-9706-47291b9bb388-1701573675458253.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701265228528-2db05e92-f69f-45f6-b9ef-48b5761c23d8-1701573675458255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701394824572-6adb31d3-2c21-463d-ac05-36b3eb6d0a18-1701573675459273.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701420735268-486b3a52-a2c2-435a-b0cc-c383b62fc044-1701573675459275.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701421123568-1c9c033b-0595-4bd9-8944-4b7a55eb590e-1701573675459277.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701422173373-096057e9-958a-4233-82bb-431c2bfe322b-1701573675459279.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932941.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100935748.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100935630.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932133.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937622.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937699.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937726.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938495.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938982.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938542.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938297.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938752.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938961.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939719.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939423.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939653.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940313.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940551.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940510.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940791.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940121.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940841.png">
+<meta property="og:image" content="http://example.com/python%E5%AD%A6%E4%B9%A0.assets/1701962088293-8dceae20-d130-410a-b1ad-9a7e69015598.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940802.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940378.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940171.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942513.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942087.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942710.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942521.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942531.png">
+<meta property="og:image" content="http://example.com/python%E5%AD%A6%E4%B9%A0.assets/1702001405937-d9d9394a-755a-47c7-a874-568fe575f5d6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943618.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943234.png">
+<meta property="og:image" content="http://example.com/python%E5%AD%A6%E4%B9%A0.assets/1702117812575-a5aae62f-6e2b-4e71-a39c-efb8b9a7235f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944645.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944562.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944636.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944585.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944459.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944803.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944024.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944535.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944416.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944567.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944955.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944018.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945178.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945827.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945603.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945517.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945929.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945073.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945082.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945760.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945649.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945632.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945120.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945490.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945875.png">
+<meta property="article:published_time" content="2023-12-03T03:02:50.000Z">
+<meta property="article:modified_time" content="2023-12-10T01:48:59.940Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dks2757/tu/main/img/1701162974376-f20c6948-1a33-461d-a8d2-2d3d2f42f8fa-1701573675455169.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
-
-
-
-<script src="/js/lib/preview.js"></script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css" />
-
-<meta name="generator" content="Hexo 7.0.0"></head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
-            </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>HEXO</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>python study</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/3
-        </span>
-        
-        
-    </div>
+  
     
-    <div class="content" v-pre>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="python-python学习" class="h-entry article article-type-python" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2023-12-03T03:02:50.000Z" itemprop="datePublished">2023-12-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python study
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
         <h1 id="1-渗透基本介绍"><a href="#1-渗透基本介绍" class="headerlink" title="1 渗透基本介绍"></a>1 渗透基本介绍</h1><h2 id="1-1渗透测试基本介绍"><a href="#1-1渗透测试基本介绍" class="headerlink" title="1-1渗透测试基本介绍"></a>1-1渗透测试基本介绍</h2><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701162974376-f20c6948-1a33-461d-a8d2-2d3d2f42f8fa-1701573675455169.png" alt="img"></p>
 <p>服务器：如windows、Linux等操作系统</p>
 <p>中间件：apache等服务器</p>
@@ -408,50 +467,134 @@
 <h4 id="字典的嵌套"><a href="#字典的嵌套" class="headerlink" title="字典的嵌套"></a>字典的嵌套</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945490.png" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945875.png" alt="img"></p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/03/python%E5%AD%A6%E4%B9%A0/" data-id="clpz6t0ki0006hcrygn1rerv2" data-title="python study" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
     
-    
-    
-    
-    
-    
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 Hexo
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;John Doe
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
+<nav id="article-nav">
+  
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          永恒之黑漏洞复现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">培训笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
     </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
 </footer>
 
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
     </div>
-    <script src="/js/main.js"></script>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
-    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-    
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
 </body>
 </html>
