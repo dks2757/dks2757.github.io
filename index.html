@@ -167,6 +167,99 @@
         
 
 <div class="post">
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+        <h2 class="post-title">网络基础</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>以太网适配器：网线接口</p>
+<p>Virtualbox：虚拟网络</p>
+<p>以太网4</p>
+<p>VMware Network：虚拟机网络以及网关</p>
+<p>无线局域网适配器 WLAN：常规ip地址</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959832.png" alt="img"></p>
+<p>IPV4地址：</p>
+<p>常规IP地址，一共四段，分别叫ABCD段</p>
+<p>8.8.8.8  （2的8次方&#x3D;255）</p>
+<p>每一段最大位数为255</p>
+<p>约定俗成最后一位 .1是网关 .255是广播地址</p>
+<p>子网掩码：子网掩码是一个32位地址，用于屏蔽IP地址的一部分以区别网络标识和主机标识，并说明该IP地址是在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B1%80%E5%9F%9F%E7%BD%91/98626?fromModule=lemma_inlink">局域网</a>上，还是在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%BF%E5%9F%9F%E7%BD%91/422004?fromModule=lemma_inlink">广域网</a>上。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959204.png" alt="img"></p>
+<p><strong>三个私网网段</strong></p>
+<p><strong>A:10.0.0.0 - 10.255.255.255</strong></p>
+<p><strong>B:172.16.0.0-173.31.255.255</strong></p>
+<p><strong>C:192.168.0.0-192.168.255.255</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959179.png" alt="img">公网（外网)   私网(内网）</p>
+<p>光猫：将光纤转换为电信号</p>
+<p>ap：路由器，即内网，内网ip任何人都可以用</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959784.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959215.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959094.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959599.png" alt="img"></p>
+<p>动态路由会变换ip找到最短路径，静态则不变。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959956.png" alt="img"></p>
+<p>两个相同ip地址的情况下，不确定性较大，一般优先静态ip，出现一个不能上网或两个都不能网。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959959.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959473.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959638.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959106.png" alt="img"></p>
+<p>网络位固定，主机位可以改变<img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100959953.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000140.png" alt="img"></p>
+<p>后面七位可分配</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000201.png" alt="img"></p>
+<p>在同一个路由器下，才会互通</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000674.png" alt="img"></p>
+<p>路由器1连接路由器2提前配置好</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.assets/1701756264887-16b987ee-b941-415b-a40b-2f4889444f71.png" alt="img"></p>
+<p><strong>代理</strong></p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.assets/1701742462519-963165b1-2745-464f-90d6-e1f48e495f8b.png" alt="img"></p>
+<p>使用桥接模式最好手动选择好驱动模块，不选自动，容易出错。</p>
+<p>桥接模式的虚拟机等价于另一台物理机，IP地址不会与本物理机相同</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.assets/1701757584281-fb00be16-31e2-4849-9688-61da05135a81.png" alt="img"></p>
+<p>NAT模式的IP地址看设置</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000679.png" alt="img"></p>
+<p>pc3能访问pc1，但是pc1不访问pc3</p>
+<p>正如你能访问百度，但百度不能访问你</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000368.png" alt="img"></p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.assets/1701825277376-187f333d-9111-4b9d-8e57-68cb0caf8ba2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000477.png" alt="img"></p>
+<p>解决防火墙抵御bug的解决方法</p>
+<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000210.png" alt="img"></p>
+<p>s：服务器</p>
+<p>c：客服端</p>
+<p>反向shell（类似于大灰狼远控原理）：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000100.png" alt="img"></p>
+<p>正向shell可能会出现bug，会有window或者Linux的防火墙抵御来自sever的监听。但是反向shell不会，因为二者连接方式不同，反向shell是客户端c连接服务器s出栈，正向shell是服务器s连接客户端c入栈。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000086.png" alt="img"></p>
+<p>解决防火墙抵御bug的解决方法</p>
+<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101000385.png" alt="img"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/12/10/Wire%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">
         <h2 class="post-title">Wire抓包工具</h2>
     </a>
