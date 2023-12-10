@@ -1,97 +1,190 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8" />
+    <title>Hexo</title>
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  
-  
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
 <meta name="generator" content="Hexo 7.0.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
         
-          <a class="main-nav-link" href="/">Home</a>
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
         
-      </nav>
-      <nav id="sub-nav">
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
         
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-永恒之黑漏洞复现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-12-03T07:09:01.000Z" itemprop="datePublished">2023-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Hexo</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap" true ref="homePostsWrap">
+    <div id="home-posts">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">永恒之黑漏洞复现</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查<strong>长度</strong>是否合法，最终导致<strong>整数溢出</strong>，直接使用会<strong>引发内存破坏漏洞</strong>，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞<strong>无须权限</strong>即可实现远程代码执行，受黑客攻击的目标系统<strong>只需开机在线即可能被入侵</strong>。<br>参考链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#">https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#</a></p>
+<div class="post">
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+        <h2 class="post-title">永恒之黑漏洞复现</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>​    2020年3月，微软公布SMB远程代码执行漏洞（CVE-2020-0796）又称“永恒之黑”，该漏洞由SMB 3.1.1协议中处理压缩消息时，对其中数据没有经过安全检查，没有检查<strong>长度</strong>是否合法，最终导致<strong>整数溢出</strong>，直接使用会<strong>引发内存破坏漏洞</strong>，可能被攻击者利用远程执行任意代码，攻击者利用该漏洞<strong>无须权限</strong>即可实现远程代码执行，受黑客攻击的目标系统<strong>只需开机在线即可能被入侵</strong>。<br>参考链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#">https://www.yuque.com/wangx1aoer/qfn3xp/kedge6c7tcms3mop?singleDoc#</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63610715/article/details/133847253">https://blog.csdn.net/weixin_63610715/article/details/133847253</a></p>
 <p><strong>1.关闭被攻击机防火墙（攻击机与被攻击机需在同一网段）</strong></p>
 <p>关闭实时防护：widows设置-更新与安全-windows安全中心-病毒和威胁防护</p>
@@ -120,44 +213,36 @@
 <p>靶机状态：崩溃蓝屏，强制重启，永恒之黑漏洞复现成功！</p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/image-20231203163353920.png" alt="image-20231203163353920"></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" data-id="clpz6t0kl000bhcryf8yz8229" data-title="永恒之黑漏洞复现" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="python-python学习" class="h-entry article article-type-python" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/" class="article-date">
-  <time class="dt-published" datetime="2023-12-03T03:02:50.000Z" itemprop="datePublished">2023-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/">python study</a>
-    </h1>
-  
+        
+        
+    </div>
+    <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1-渗透基本介绍"><a href="#1-渗透基本介绍" class="headerlink" title="1 渗透基本介绍"></a>1 渗透基本介绍</h1><h2 id="1-1渗透测试基本介绍"><a href="#1-1渗透测试基本介绍" class="headerlink" title="1-1渗透测试基本介绍"></a>1-1渗透测试基本介绍</h2><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701162974376-f20c6948-1a33-461d-a8d2-2d3d2f42f8fa-1701573675455169.png" alt="img"></p>
+<div class="post">
+    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/">
+        <h2 class="post-title">python study</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="1-渗透基本介绍"><a href="#1-渗透基本介绍" class="headerlink" title="1 渗透基本介绍"></a>1 渗透基本介绍</h1><h2 id="1-1渗透测试基本介绍"><a href="#1-1渗透测试基本介绍" class="headerlink" title="1-1渗透测试基本介绍"></a>1-1渗透测试基本介绍</h2><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701162974376-f20c6948-1a33-461d-a8d2-2d3d2f42f8fa-1701573675455169.png" alt="img"></p>
 <p>服务器：如windows、Linux等操作系统</p>
 <p>中间件：apache等服务器</p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701163150627-1a0a64d5-a9d6-4241-b72e-4569378626c0-1701573675456171.png" alt="img"></p>
@@ -401,44 +486,36 @@
 <h4 id="字典的嵌套"><a href="#字典的嵌套" class="headerlink" title="字典的嵌套"></a>字典的嵌套</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945490.png" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945875.png" alt="img"></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/03/python%E5%AD%A6%E4%B9%A0/" data-id="clpz6t0ki0006hcrygn1rerv2" data-title="python study" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-培训笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-11-30T16:00:00.000Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/">培训笔记</a>
-    </h1>
-  
+        
+        
+    </div>
+    <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>tg注册</p>
+<div class="post">
+    <a href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/">
+        <h2 class="post-title">培训笔记</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>tg注册</p>
 <p>tg注册拥有纸飞机relegram账号后才可使用社工库。</p>
 <p>注册</p>
 <p>1、手机挂代理直接注册（时间久）</p>
@@ -683,122 +760,91 @@
 <p>快照还原点</p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701398835904-8b817d7a-ca12-4bb4-b79f-31601bcd3a1a-1701569499633103.png" alt="img"></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/" data-id="clpz6t0kl000ahcry0dve7lx8" data-title="培训笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-</section>
+    <div class="post-tags">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+        
+        
     </div>
-  </div>
+    <a href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
+</div>
 
 
-  
+        <div class="page-current">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/12/10/12.8%E9%A2%84%E5%AD%A6vue/">12.8预学vue</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/10/12-7%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%92%8C%E8%A1%A8%E5%8D%95/">12.7域名解析和html5表单</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/10/12-6bash%E7%99%BB%E5%BD%95%E5%92%8CHTML5/">12.6bash登录和HTML5</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/10/Wireshark%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">Wireshark抓包工具</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    <a class="page-num" href="/">
+        <i class="fa-solid fa-caret-left fa-fw"></i>
+    </a>
+    <a class="page-num" href="/">1</a>
+    <span class="page-omit">...</span>
+    
+    <span class="current">2</span>
+    
+    
+    
+    
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
+    
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">John Doe</div>
+        <div class="description">
+            <p>Description<br>…</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
 </footer>
 
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <script src="/js/main.js"></script>
     
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
 </html>
