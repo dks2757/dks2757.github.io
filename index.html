@@ -167,6 +167,97 @@
         
 
 <div class="post">
+    <a href="/2023/12/10/Wire%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">
+        <h2 class="post-title">Wire抓包工具</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><strong>简介</strong></p>
+<p>Wireshark（前称Ethereal）是一个<a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%B0%81%E5%8C%85?fromModule=lemma_inlink">网络封包</a>分析软件。<a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%B0%81%E5%8C%85%E5%88%86%E6%9E%90/17608901?fromModule=lemma_inlink">网络封包分析</a>软件的功能是截取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark使用<a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/WinPCAP/11048966?fromModule=lemma_inlink">WinPCAP</a>作为接口，直接与网卡进行数据报文交换。</p>
+<p><strong>实验开始</strong></p>
+<p>下载如图版本wireshark抓包工具，此版本win11不可用，本次实验将此版本wireshark下到win10虚拟机内使用。</p>
+<p>（安装过程中，勾选全部选项，避免报错）</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100925999.png" alt="img"></p>
+<p>移至虚拟机，双击启动wireshark抓包工具。</p>
+<p>选择如图选项，双击进入。</p>
+<p><img src="/111.assets/1701777680445-7611a3e0-e10a-49a5-9312-8ac5493470d4.png" alt="img"></p>
+<p>win+R进入命令行，ping百度发送数据包，尝试抓取。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100927751.png" alt="img"></p>
+<p>wireshark抓包工具抓取到数据包，实验成功！</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100927767.png" alt="img"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/12/10/Wire%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/05/ssh-denglu/">
+        <h2 class="post-title">ssh登录</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/5
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><img src="/ssh-denglu.assets/1701411207475-8c951100-2836-4f82-bd39-415b43e43738.png"></p>
+<p><strong>1.提权</strong></p>
+<p>本次使用的机器是centos7，本次实验需要root用户权限，所以第一件事是提权。</p>
+<p><img src="/ssh-denglu.assets/image-20231205204945816.png" alt="image-20231205204945816"></p>
+<p><strong>2.实验开始</strong></p>
+<p>再依次输入上述命令，开机自启动</p>
+<p><img src="/ssh-denglu.assets/1701411256019-207bb265-4015-4afb-9aa3-7772ea54393f.png" alt="img"></p>
+<p>现在启动</p>
+<p><img src="/ssh-denglu.assets/1701411294440-4c59588e-f0f3-4459-88ea-7ca6deffc904.png" alt="img"></p>
+<p>进入目标目录文件（上述命令中不是“vim“而是”vi”）</p>
+<p><strong>vi</strong> &#x2F;etc&#x2F;ssh&#x2F;ssh_config</p>
+<p>按Esc，输入：set nu命令显示行号,移到38行 ，将PermitRootlogin后的no改为yes。随后再按Esc，输入：wq！，回车，保存退出。</p>
+<p><img src="/ssh-denglu.assets/image-20231206101821967.png" alt="image-20231206101821967"></p>
+<p>重启服务</p>
+<p><img src="/ssh-denglu.assets/1701411374570-2fe11a1e-f788-4c67-bcec-84e70c9b1438.png" alt="img"></p>
+<p>在物理机输入连接虚拟机的IP地址的命令，随后可进入虚拟机</p>
+<p><img src="/ssh-denglu.assets/1701418436239-fc54fe84-cc37-4645-913a-1873056ad797.png" alt="img"></p>
+<p><img src="/ssh-denglu.assets/1701418340184-2c63d6dc-e892-4bc3-99cd-84ad10573773.png" alt="img"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/12/05/ssh-denglu/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/12/03/Quasar%E6%9C%80%E6%96%B0%E5%86%85%E9%83%A8%E6%88%90%E5%91%98%E6%B1%89%E5%8C%96%E7%89%88%E8%BF%9C%E6%8E%A7/">
         <h2 class="post-title">Quasar最新内部成员汉化版远控</h2>
     </a>
@@ -514,6 +605,136 @@
 <p>s0代码：如果只有一个数据需要填，可不加括号。</p>
 <p>s1代码：在s代码的基础上，将信息与格式放在一起，用{}代替所有格式%，不需要记格式。</p>
 <p>s2代码：在前面加一个”f“，直接把变量塞到括号中即可，不需要记格式和顺序非常方便。<img src="https://raw.githubusercontent.com/dks2757/tu/main/img/1701422173373-096057e9-958a-4233-82bb-431c2bfe322b-1701573675459279.png" alt="img"></p>
+<h3 id="2-12索引与切片"><a href="#2-12索引与切片" class="headerlink" title="2-12索引与切片"></a>2-12索引与切片</h3><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932941.png" alt="img"></p>
+<p><strong>切片区间前闭后开，从左往右。</strong></p>
+<p>从右到左则没结果。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100935748.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100935630.png" alt="img"></p>
+<p>切片从头开始切的话，可以不写“0”，切片如果切到末尾则可以不写“末尾的数字”，如果“：”前后都空白，意思就是从头到尾都要。</p>
+<p>切片语法：s[start:end:step] 从start切到end每step出来一个元素，step的正负控制数数的方向，正数从左到右，负数从右到左，step为正数则取左边元素，step为负数则取右边元素。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932133.png" alt="img"></p>
+<p>step为正数：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937622.png" alt="img"></p>
+<p>step为负数：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100932066.png" alt="img"></p>
+<h3 id="2-13-字符串常规操作"><a href="#2-13-字符串常规操作" class="headerlink" title="2-13 字符串常规操作"></a>2-13 字符串常规操作</h3><p>常规操作一般不会影响原来的字符串，prinf（s）输出的结果仍然是python，但是返回的是一个新的字符串。</p>
+<p>capitalize命令的作用是让首字母大写。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937699.png" alt="img"></p>
+<p>title命令是让连贯字母组合的第一个字母大写</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100937726.png" alt="img"></p>
+<p>lower让所有字母变小写</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938495.png" alt="img"></p>
+<p><strong>upper命令让所有字母大写，此命令以后会常用，比较重要。</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938982.png" alt="img"></p>
+<p>upper命令在验证码的应用。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938542.png" alt="img"></p>
+<p>代码改进，如果验证码错误则再一次进入循环，直至正确。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938297.png" alt="img"></p>
+<p>上述代码改进请注意<strong>if和while的区别</strong></p>
+<p>​    if语句是条件语句，用于根据特定条件执行代码块。它只检查一次条件，如果条件为真，则执行代码块，如果条件为假，则跳过代码块。</p>
+<p>​    while循环则是循环语句，只要满足某个条件，就会反复执行一段代码。它会在每次循环开始前检查条件，如果条件为真，则执行代码块，否则停止循环。</p>
+<h3 id="2-14-字符串的切割与替换"><a href="#2-14-字符串的切割与替换" class="headerlink" title="2-14 字符串的切割与替换"></a>2-14 字符串的切割与替换</h3><h4 id="去除-strip"><a href="#去除-strip" class="headerlink" title="去除 .strip()"></a>去除 <strong>.strip()</strong></h4><p>可以去除字符串两边的空格、Tab（\t）、缩进（\n）等。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938752.png" alt="img"></p>
+<h4 id="替换-replace-“x”-”y”"><a href="#替换-replace-“x”-”y”" class="headerlink" title="替换 .replace(“x”,”y”)"></a>替换 .replace(<strong>“x”,”y”</strong>)</h4><p>可以去除所有的空格，例如爬虫住区网站数据，可以用.replace()去掉空格等多余数据。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100938961.png" alt="img"></p>
+<h4 id="切割-split（”x”）"><a href="#切割-split（”x”）" class="headerlink" title="切割**.split（”x”）**"></a>切割**.split（”x”）**</h4><p>以x用来切割，输出的结果是一张列表。用什么去切割，就会损失掉什么。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939719.png" alt="img"></p>
+<h3 id="2-15-查找和判断"><a href="#2-15-查找和判断" class="headerlink" title="2-15 查找和判断"></a>2-15 查找和判断</h3><h4 id="查找-find-“”"><a href="#查找-find-“”" class="headerlink" title="查找.find(“”)"></a><strong>查找.find(“”)</strong></h4><p>意思是从第“7”位数开始，查找到了结果。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939423.png" alt="img"></p>
+<p>如果返回的结果是“-1”，则是没有该结果。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100939653.png" alt="img"></p>
+<h4 id="判断-index-“”"><a href="#判断-index-“”" class="headerlink" title="判断 .index(“”)"></a><strong>判断 .index(“”)</strong></h4><p>index和find的区别就是，index没有找到会直接报错。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940313.png" alt="img"></p>
+<p>但是直接用print查找是否存在，<strong>print + in</strong> 组合。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940131.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940602.png" alt="img"></p>
+<h4 id="开头-startwith-“”"><a href="#开头-startwith-“”" class="headerlink" title="开头 .startwith(“”)"></a>开头 .startwith(“”)</h4><p>可以用来判断以什么什么开头。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940551.png" alt="img"></p>
+<h4 id="整数判断-isdight-和小数判断-isde"><a href="#整数判断-isdight-和小数判断-isde" class="headerlink" title="整数判断 .isdight()和小数判断 .isde()"></a>整数判断 .isdight()和小数判断 .isde()</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940510.png" alt="img"></p>
+<h4 id="补充：len和join"><a href="#补充：len和join" class="headerlink" title="补充：len和join()"></a>补充：len和join()</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940791.png" alt="img"></p>
+<h4 id="in的两种用法"><a href="#in的两种用法" class="headerlink" title="in的两种用法"></a>in的两种用法</h4><p>1.如上述，print（“x“ in ”y“），判断x在y中是否存在。</p>
+<p>2.for循环，for x in y ，用y的每一个可迭代值赋给x。</p>
+<h3 id="2-16-列表"><a href="#2-16-列表" class="headerlink" title="2-16 列表"></a>2-16 列表</h3><h4 id="列表的概念"><a href="#列表的概念" class="headerlink" title="列表的概念"></a>列表的概念</h4><p>超出列表范围会直接报错。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940121.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940841.png" alt="img"></p>
+<h4 id="列表的增删改查"><a href="#列表的增删改查" class="headerlink" title="列表的增删改查"></a>列表的增删改查</h4><p><strong>追加.append()，加入的元素放在列表末尾</strong></p>
+<p><strong>插入.insert(位置,”x”)，将x插入到列表第多少个位置。插入第一个位置效率偏低，因为后面的元素都要往后面顺移一个位置。</strong></p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0.assets/1701962088293-8dceae20-d130-410a-b1ad-9a7e69015598.png" alt="img"></p>
+<p><strong>拓展.extend()，可以合并两个列表，批量添加。</strong></p>
+<p><strong>删除.pop()，可以返回被删除的元素。</strong></p>
+<p><strong>.remove()，彻底删除。</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940802.png" alt="img"></p>
+<p>用索引就可以直接修改。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940378.png" alt="img"></p>
+<p>直接用索引进行查询。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100940171.png" alt="img"></p>
+<p>练习</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942513.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942087.png" alt="img"></p>
+<h4 id="列表的其他操作"><a href="#列表的其他操作" class="headerlink" title="列表的其他操作"></a>列表的其他操作</h4><p>列表会按照存放的顺序保存，是有序的</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942710.png" alt="img"></p>
+<p><strong>.sort() 升序排序</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942521.png" alt="img"></p>
+<p><strong>.sort(reverse&#x3D;True) 倒序排序</strong></p>
+<p><strong>reverse：翻转</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100942531.png" alt="img"></p>
+<p>列表嵌套并提取列表元素</p>
+<p><img src="/python%E5%AD%A6%E4%B9%A0.assets/1702001405937-d9d9394a-755a-47c7-a874-568fe575f5d6.png" alt="img"></p>
+<p>让列表中字母变大写，字符串不可改变，所以使用如图语法</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943066.png" alt="img"></p>
+<h4 id="列表的循环删除"><a href="#列表的循环删除" class="headerlink" title="列表的循环删除"></a>列表的循环删除</h4><p>用图中#有bug 的常规删除方法删的不干净，因为删完一位后面的元素会往前顺移一格，所以用**.append()**的方法建立一个删除元素的临时表格集合，再把列表删临时列表内的元素，就能删除干净了。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943618.png" alt="img"></p>
+<h3 id="2-17-tuple-元组"><a href="#2-17-tuple-元组" class="headerlink" title="2-17 tuple 元组"></a>2-17 tuple 元组</h3><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100943234.png" alt="img"><img src="/python%E5%AD%A6%E4%B9%A0.assets/1702117812575-a5aae62f-6e2b-4e71-a39c-efb8b9a7235f.png" alt="img"></p>
+<p>元组的内存地址不能变，但是元组内的列表的东西可以变。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944645.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944562.png" alt="img"></p>
+<h3 id="2-18-set-集合"><a href="#2-18-set-集合" class="headerlink" title="2-18 set 集合"></a>2-18 set 集合</h3><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944636.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944585.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944405.png" alt="img"></p>
+<h4 id="交集并集差集"><a href="#交集并集差集" class="headerlink" title="交集并集差集"></a>交集并集差集</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944459.png" alt="img"><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944803.png" alt="img"></p>
+<p>大概率会和原先的列表顺序不一样</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944024.png" alt="img">、</p>
+<h3 id="2-19-字典-dict"><a href="#2-19-字典-dict" class="headerlink" title="2-19 字典 dict"></a>2-19 字典 dict</h3><p>键和值一起存，根据前者的键，找后者的值。键比如是<strong>可哈希的（不可变）</strong>。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944535.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944357.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944055.png" alt="img"></p>
+<h3 id="2-20-字典的增删改查"><a href="#2-20-字典的增删改查" class="headerlink" title="2-20 字典的增删改查"></a>2-20 字典的增删改查</h3><p>增</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944416.png" alt="img"></p>
+<p>使用**.setdefault 新增**</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944567.png" alt="img"></p>
+<p>当字典中出现两个相同的键时，后赋值的会盖住前面的，也就是<strong>修改</strong>操作。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944955.png" alt="img"></p>
+<p><strong>删除</strong> dic.pop()	</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100944018.png" alt="img"></p>
+<p><strong>查询</strong> </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945178.png" alt="img"></p>
+<p><strong>None</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945827.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945603.png" alt="img"></p>
+<h3 id="2-21-字典的循环与嵌套"><a href="#2-21-字典的循环与嵌套" class="headerlink" title="2-21 字典的循环与嵌套"></a>2-21 字典的循环与嵌套</h3><h4 id="字典的循环"><a href="#字典的循环" class="headerlink" title="字典的循环"></a>字典的循环</h4><p>可以用<strong>for key in dic : 拿到字典中的所有键</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945517.png" alt="img"></p>
+<p>该代码拿到了字典所有信息</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945929.png" alt="img"></p>
+<p>拿到所有的key</p>
+<p><strong>print(dic.keys())</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945073.png" alt="img"></p>
+<p>将字典的所有key存到一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945439.png" alt="img"></p>
+<p><strong>获取valu方法同上。</strong></p>
+<p>同时获得key与value</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945082.png" alt="img"></p>
+<p>简化进阶1</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945760.png" alt="img"></p>
+<p>简化进阶2</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945649.png" alt="img"></p>
+<p><strong>最简化版，很重要</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945632.png" alt="img"></p>
+<p><strong>解构（解包）</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945120.png" alt="img"></p>
+<h4 id="字典的循环删除"><a href="#字典的循环删除" class="headerlink" title="字典的循环删除"></a>字典的循环删除</h4><p>不能循环这个字典的同时删东西，要先把要删的东西拿出来，建立一个临时列表，再用临时列表删掉。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945255.png" alt="img"></p>
+<h4 id="字典的嵌套"><a href="#字典的嵌套" class="headerlink" title="字典的嵌套"></a>字典的嵌套</h4><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945490.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312100945875.png" alt="img"></p>
 
             
         </div>

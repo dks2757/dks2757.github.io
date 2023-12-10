@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | Hexo</title>
+    <title>ssh登录 | Hexo</title>
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -31,6 +31,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -144,138 +148,49 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+            <div class="article">
+    <div>
+        <h1>ssh登录</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/5
+        </span>
         
-        <div class="timeline" data-title="培训笔记">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/1</div>
-                <a href="/2023/12/01/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/">
-                    <h3>培训笔记</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="pythonstudy">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/python%E5%AD%A6%E4%B9%A0/">
-                    <h3>python study</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="永恒之黑漏洞复现">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
-                    <h3>永恒之黑漏洞复现</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="大灰狼远程操控">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E7%A8%8B%E6%93%8D%E6%8E%A7/">
-                    <h3>大灰狼远程操控</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="ahmyth安卓病毒监听">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/AhMyth%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">
-                    <h3>AhMyth安卓病毒监听</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="linuxstudy">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/Linux%E5%AD%A6%E4%B9%A0/">
-                    <h3>linux study</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="quasar最新内部成员汉化版远控">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/3</div>
-                <a href="/2023/12/03/Quasar%E6%9C%80%E6%96%B0%E5%86%85%E9%83%A8%E6%88%90%E5%91%98%E6%B1%89%E5%8C%96%E7%89%88%E8%BF%9C%E6%8E%A7/">
-                    <h3>Quasar最新内部成员汉化版远控</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="ssh登录">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/5</div>
-                <a href="/2023/12/05/ssh-denglu/">
-                    <h3>ssh登录</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="wire抓包工具">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/12/10</div>
-                <a href="/2023/12/10/Wire%E6%8A%93%E5%8C%85%E5%B7%A5%E5%85%B7/">
-                    <h3>Wire抓包工具</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <p><img src="/ssh-denglu.assets/1701411207475-8c951100-2836-4f82-bd39-415b43e43738.png"></p>
+<p><strong>1.提权</strong></p>
+<p>本次使用的机器是centos7，本次实验需要root用户权限，所以第一件事是提权。</p>
+<p><img src="/ssh-denglu.assets/image-20231205204945816.png" alt="image-20231205204945816"></p>
+<p><strong>2.实验开始</strong></p>
+<p>再依次输入上述命令，开机自启动</p>
+<p><img src="/ssh-denglu.assets/1701411256019-207bb265-4015-4afb-9aa3-7772ea54393f.png" alt="img"></p>
+<p>现在启动</p>
+<p><img src="/ssh-denglu.assets/1701411294440-4c59588e-f0f3-4459-88ea-7ca6deffc904.png" alt="img"></p>
+<p>进入目标目录文件（上述命令中不是“vim“而是”vi”）</p>
+<p><strong>vi</strong> &#x2F;etc&#x2F;ssh&#x2F;ssh_config</p>
+<p>按Esc，输入：set nu命令显示行号,移到38行 ，将PermitRootlogin后的no改为yes。随后再按Esc，输入：wq！，回车，保存退出。</p>
+<p><img src="/ssh-denglu.assets/image-20231206101821967.png" alt="image-20231206101821967"></p>
+<p>重启服务</p>
+<p><img src="/ssh-denglu.assets/1701411374570-2fe11a1e-f788-4c67-bcec-84e70c9b1438.png" alt="img"></p>
+<p>在物理机输入连接虚拟机的IP地址的命令，随后可进入虚拟机</p>
+<p><img src="/ssh-denglu.assets/1701418436239-fc54fe84-cc37-4645-913a-1873056ad797.png" alt="img"></p>
+<p><img src="/ssh-denglu.assets/1701418340184-2c63d6dc-e892-4bc3-99cd-84ad10573773.png" alt="img"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
             <footer id="footer">
@@ -306,6 +221,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
