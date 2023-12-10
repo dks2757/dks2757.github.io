@@ -91,7 +91,39 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p><strong>proxifier代理工具的使用以及浏览器代理设置</strong></p>
+<p>1.clash的使用：</p>
+<p>clash端口与系统端口设置相同，设置端口为7890，打开允许局域网接入clash，如图所示设置</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101623642.jpg" alt="img"> </p>
+<p><strong>浏览器代理设置（推荐谷歌、火狐）</strong></p>
+<p>edge代理设置步骤</p>
+<p>点开edge，找到三个点，打开扩展，获取Microsoft的扩展，搜索Proxy SwitchyOmega，获取拓展，安装完成之后打开拓展找到打开并固定Proxy SwitchyOmega，点击选项打开入图所示界面：</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101623094.jpg" alt="img"> </p>
+<p>点击新建情景模式，名字随便取，按照如图设置就可以将上图配置的clash接入浏览器中。<br><img src="/proxifier%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.assets/wps4.jpg" alt="img"></p>
+<p>同理火狐浏览器也是一样，由于火狐自带的有foxyProxy，只需要按照如图去设置就行</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101623974.jpg" alt="img"> </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101623669.jpg" alt="img"> </p>
+<p>浏览器能够使用代理的原理：</p>
+<p><img src="/proxifier%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.assets/wps7.jpg" alt="img"> </p>
+<p>proxi使用：</p>
+<p>打开老师发送的地址<a target="_blank" rel="noopener" href="http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/proxifier_137484.rar">http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/proxifier_137484.rar</a></p>
+<p>通过这个地址可以下载proxi代理工具，下载完成之后解压并用管理员身份打开，界面如图所示</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624343.jpg" alt="img"> </p>
+<p>打开配置文件，点击代理服务器，添加，按照如图设置点击确认即可。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624646.jpg" alt="img"> </p>
+<p>打开配置文件，打开代理规则，删除本地的规则，建立一个全新自己的规则</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624755.jpg" alt="img"> </p>
+<p>设置为之后代理规则的界面应该为，点击确认即可。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624698.jpg" alt="img"> </p>
+<p>此时进行测试，按上win+r，输入cmd命令。再次输入ssh <a href="mailto:&#114;&#111;&#x6f;&#116;&#x40;&#49;&#x2e;&#x31;&#46;&#x31;&#x2e;&#49;">&#114;&#111;&#x6f;&#116;&#x40;&#49;&#x2e;&#x31;&#46;&#x31;&#x2e;&#49;</a></p>
+<p>此时会显示连接失败，但是问题不大，查看proxi上面的信息可以看到ssh.exe，而且ssh.exe 服务在第五层会话层，此时进行过连接说明配置成功。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624751.jpg" alt="img"> </p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202312101624181.jpg" alt="img"> </p>
+<p>也可以对steam进行测试，打开steam结果为</p>
+<p><img src="/proxifier%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.assets/wps14.jpg" alt="img"> </p>
+<p>能够成功进入，proxi上面显示：</p>
+<p><img src="/proxifier%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.assets/wps15.jpg" alt="img"> </p>
+
       
     </div>
     <footer class="article-footer">
