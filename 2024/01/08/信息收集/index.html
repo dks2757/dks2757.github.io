@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            信息收集、google语法、whois查询
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>​    几乎每一个学习渗透的安全人员，都会被告知，信息收集是渗透测试的本质，那事实果真如此嘛？答案是，是的！信息收集作为渗透测试的前期主要工作，说白了叫做确定目标，以达到制作渗透计划的目的，这是非常重要的，甚至有的时候，仅仅通过信息收集，就可以拿到目标的shell了。</p>
+<p>​    其实信息收集也是有分类的：分为主动信息收集+被动信息收集。主动信息收集，说白了，就是直接访问、扫描网站，这种流量将流经网站，不可避免的留下了自己来过的痕迹；而被动信息收集呢，则是利用第三方的服务对目标进行访问了解，比如利用搜索引擎Google、Shodon等等。</p>
+<p>​    收集的内容就有五花八门了，比如whois信息、C段网站、服务器系统版本、容器版本、程序版本、数据库类型、二级域名、防火墙、维护者信息等等，在我看来，收集的内容其实就两种：域名、IP。</p>
+<h4 id="一、关于域名"><a href="#一、关于域名" class="headerlink" title="一、关于域名"></a>一、关于域名</h4><h5 id="1-子域名收集"><a href="#1-子域名收集" class="headerlink" title="1.子域名收集"></a>1.子域名收集</h5><ul>
+<li>收集子域名可以扩大渗透范围，获得更多有关目标公司的资产信息，同一域名下的二级域名都属于目标范围，表现形式：域名加前缀，例如：域名 zkaq.cn 加前缀，abc.zkaq.cn。</li>
+<li>一个基于yak语言编写的工具，功能类似Burpsuite，主要功能有拦截http&#x2F;s数据包，漏洞检测，网站地图，自动&#x2F;手动测试web应用，编码解码，请求与</li>
+</ul>
+<h6 id="a-搜索引擎查找"><a href="#a-搜索引擎查找" class="headerlink" title="a.搜索引擎查找"></a>a.搜索引擎查找</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FOFA(https://fofa.so/) title=&quot;公司名称&quot; ; domain=&quot;zkaq.cn&quot;  </span><br><span class="line"></span><br><span class="line">百度(https://www.baidu.com/s)：intitle=公司名称；site:zkaq.cn</span><br><span class="line"></span><br><span class="line">Google(https://www.google.com/)：intitle=公司名称;site:zkaq.cn</span><br><span class="line"></span><br><span class="line">钟馗之眼(https://www.zoomeye.org/) site=域名即可 ;hostname:baidu.com</span><br><span class="line"></span><br><span class="line">shodan(https://www.shodan.io/)：hostname:&quot;baidu.com&quot;</span><br><span class="line"></span><br><span class="line">360测绘空间(https://quake.360.cn/) ：domain:&quot;zkaq.cn&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-在线查询"><a href="#b-在线查询" class="headerlink" title="b.在线查询"></a>b.在线查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">站长之家：http://tool.chinaz.com/</span><br><span class="line"></span><br><span class="line">在线子域名查询：https://phpinfo.me/domain/</span><br><span class="line"></span><br><span class="line">子域名扫描：https://www.t1h2ua.cn/tools/</span><br><span class="line"></span><br><span class="line">dnsdumpster：https://dnsdumpster.com/</span><br><span class="line"></span><br><span class="line">查询网：https://site.ip138.com/</span><br><span class="line"></span><br><span class="line">爱站：http://dns.aizhan.com</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-工具"><a href="#c-工具" class="headerlink" title="c.工具"></a>c.工具</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 子域名挖掘机： 图形化的使用方式。</span><br><span class="line"></span><br><span class="line">2. SubDomainBrute工具: python3 subDomainsBrute.py -t 10 zkaq.cn -f subnames_full.txt -o 111.txt</span><br><span class="line"></span><br><span class="line">3. Sublist3r工具 python3 sublist3r -t 10 -b -d zkaq.cn</span><br><span class="line"></span><br><span class="line">4. OneForALL工具：python3 oneforall.py --target zkaq.cn run</span><br><span class="line"></span><br><span class="line">5. Wydomain工具：python wydomain.py -d zkaq.cn -o zkaq.txt</span><br><span class="line"></span><br><span class="line">6. FuzzDomain工具： 图形化的使用方式。</span><br></pre></td></tr></table></figure>
+
+<h6 id="d-SSL-TLS证书查询"><a href="#d-SSL-TLS证书查询" class="headerlink" title="d.SSL&#x2F;TLS证书查询"></a>d.SSL&#x2F;TLS证书查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SSL/TLS安全评估报告：https://myssl.com</span><br><span class="line"></span><br><span class="line">crt.sh：https://crt.sh/</span><br><span class="line"></span><br><span class="line">SPYSE：https://spyse.com/tools/ssl-lookup</span><br><span class="line"></span><br><span class="line">censy：https://censys.io/</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-端口型站点收集"><a href="#2-端口型站点收集" class="headerlink" title="2.端口型站点收集"></a>2.端口型站点收集</h5><ul>
+<li>收集端口型站点和收集子域名是一样的，都是扩大渗透范围，获得更多有关目标公司的资产信息，表现形式：域名后加【：端口号】，例如：域名 zkaq.cn 加后缀 zkaq.cn:8080。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080932959.png" alt="img"></p>
+<h5 id="3-目录文件扫描"><a href="#3-目录文件扫描" class="headerlink" title="3.目录文件扫描"></a>3.目录文件扫描</h5><ul>
+<li>目录扫描可以扫出来非常多重要的资源，比如目录型的站点，后台，敏感文件，比如.git文件泄露，.svn文件泄露，phpinfo泄露等等，表现形式：域名后加路径，例如：域名 zkaq.cn 加后缀 zkaq.cn&#x2F;admin&#x2F;admin.php。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080932689.png" alt="img"></p>
+<h6 id="a-目录扫描工具"><a href="#a-目录扫描工具" class="headerlink" title="a.目录扫描工具"></a>a.目录扫描工具</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">御剑工具：图形化的使用方式。</span><br><span class="line"></span><br><span class="line">7kbstorm工具：图形化的使用方式。</span><br><span class="line"></span><br><span class="line">dirbuster工具：图形化的使用方式。</span><br><span class="line"></span><br><span class="line">dirmap工具：python3 dirmap.py -i https://bbs.zkaq.cn -lcf</span><br><span class="line"></span><br><span class="line">dirsearch工具：python3 dirsearch.py -u https://www.zkaq.cn -e php</span><br><span class="line"></span><br><span class="line">gobuster工具：gobuster dir -u &quot;https://bbs.zkaq.cn&quot; -w &quot;/root/tools/DirBrute/dirmap/data/fuzz_mode_dir.txt&quot; -n -e -q --wildcard</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-github搜索"><a href="#b-github搜索" class="headerlink" title="b.github搜索"></a>b.github搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">in:name huawei #仓库标题中含有关键字huawei</span><br><span class="line"></span><br><span class="line">in:descripton Huawei.com #仓库描述搜索含有关键字huawei</span><br><span class="line"></span><br><span class="line">in:readme huawei #Readme文件搜素含有关键字Huawei</span><br><span class="line"></span><br><span class="line">smtp 58.com password 3306 #搜索某些系统的密码</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-google搜索"><a href="#c-google搜索" class="headerlink" title="c.google搜索"></a>c.google搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">密码搜索：</span><br><span class="line"></span><br><span class="line">        site:Github.com sa password</span><br><span class="line"></span><br><span class="line">        site:Github.com root password</span><br><span class="line"></span><br><span class="line">        site:Github.com User ID=&#x27;sa&#x27;;Password</span><br><span class="line"></span><br><span class="line">        site:Github.com inurl:sql</span><br><span class="line"></span><br><span class="line">SVN 信息收集</span><br><span class="line"></span><br><span class="line">        site:Github.com svn</span><br><span class="line"></span><br><span class="line">        site:Github.com svn username</span><br><span class="line"></span><br><span class="line">        site:Github.com svn password</span><br><span class="line"></span><br><span class="line">        site:Github.com svn username password</span><br><span class="line"></span><br><span class="line">综合信息收集</span><br><span class="line"></span><br><span class="line">        site:Github.com password</span><br><span class="line"></span><br><span class="line">        site:Github.com ftp ftppassword</span><br><span class="line"></span><br><span class="line">        site:Github.com 密码</span><br><span class="line"></span><br><span class="line">        site:Github.com 内部</span><br></pre></td></tr></table></figure>
+
+<h6 id="d-在线网站"><a href="#d-在线网站" class="headerlink" title="d.在线网站"></a>d.在线网站</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">乌云漏洞库：https://wooyun.website/</span><br><span class="line"></span><br><span class="line">网盘搜索：</span><br><span class="line"></span><br><span class="line">凌云搜索  https://www.lingfengyun.com/</span><br><span class="line"></span><br><span class="line">盘搜搜：http://www.pansoso.com/</span><br><span class="line"></span><br><span class="line">盘搜：http://www.pansou.com/</span><br></pre></td></tr></table></figure>
+
+<h6 id="e-文件接口工具"><a href="#e-文件接口工具" class="headerlink" title="e.文件接口工具"></a>e.文件接口工具</h6><p>1.jsfinder：<a target="_blank" rel="noopener" href="https://gitee.com/kn1fes/JSFinder">https://gitee.com/kn1fes/JSFinder</a></p>
+<p>2.Packer-Fuzzer: <a target="_blank" rel="noopener" href="https://github.com/rtcatc/Packer-Fuzzer">https://github.com/rtcatc/Packer-Fuzzer</a></p>
+<p>3.SecretFinder：<a target="_blank" rel="noopener" href="https://gitee.com/mucn/SecretFinder">https://gitee.com/mucn/SecretFinder</a></p>
+<h5 id="4-旁站和C段"><a href="#4-旁站和C段" class="headerlink" title="4.旁站和C段"></a>4.旁站和C段</h5><ul>
+<li>旁站：同一个服务器内的站点。</li>
+<li>C段：同网段，不同服务器内的站点</li>
+</ul>
+<h6 id="a-旁站查询"><a href="#a-旁站查询" class="headerlink" title="a.旁站查询"></a>a.旁站查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">站长之家：http://stool.chinaz.com/same</span><br><span class="line"></span><br><span class="line">在线：https://chapangzhan.com/</span><br><span class="line"></span><br><span class="line">搜索引擎：fofa： ip=&quot;1.1.1.0/24&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-C段查询"><a href="#b-C段查询" class="headerlink" title="b.C段查询"></a>b.C段查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. webscan：https://c.webscan.cc/</span><br><span class="line"></span><br><span class="line">2. Nmap：</span><br><span class="line"></span><br><span class="line">3. msscan：</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-网站技术架构信息"><a href="#5-网站技术架构信息" class="headerlink" title="5.网站技术架构信息"></a>5.网站技术架构信息</h5><ul>
+<li>了解网站的基础架构信息，能够帮助我们更有信心的去测试目标系统。</li>
+</ul>
+<h6 id="a-基础知识"><a href="#a-基础知识" class="headerlink" title="a.基础知识"></a>a.基础知识</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">只列出一些↓：</span><br><span class="line"></span><br><span class="line">常见的脚本类型语言：asp、php、aspx、jsp、cgi等等</span><br><span class="line"></span><br><span class="line">网站类型：电商(偏向于业务逻辑漏洞)、论坛（站点层漏洞、逻辑类漏洞）、门户类（综合类漏洞）等等</span><br><span class="line"></span><br><span class="line">数据库：access、mysql、mssql、oracle、postsql等等</span><br><span class="line"></span><br><span class="line">源码与数据库组合：asp+access、php+mysql、aspx+mssql、jsp+mssql、oracle、python+mongdb等等</span><br><span class="line"></span><br><span class="line">除了这些外，还有加密的结构、目录结构、常见端口号及对应的服务等等这些都需要再进行了解。</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-网站头信息"><a href="#b-网站头信息" class="headerlink" title="b.网站头信息"></a>b.网站头信息</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.F12 , 浏览器内获取查看</span><br><span class="line"></span><br><span class="line">2.在线网站：http://whatweb.bugscaner.com/look/</span><br><span class="line"></span><br><span class="line">3.插件：Wappalyzer    </span><br><span class="line"></span><br><span class="line">4. curl命令查询头信息：curl https://bbs.zkaq.cn -i</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-CMS识别"><a href="#6-CMS识别" class="headerlink" title="6.CMS识别"></a>6.CMS识别</h5><ul>
+<li>CMS可以说指的是网站的源码，如果能识别出一个网站使用的哪一种CMS的话，那么可以通过搜索引擎去发现相应的漏洞，若网站管理员没有处理的话，则可以直接突破站点。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.云悉：https://www.yunsee.cn/ </span><br><span class="line"></span><br><span class="line">2.潮汐指纹：http://finger.tidesec.net/</span><br><span class="line"></span><br><span class="line">3.whatweb：http://whatweb.bugscaner.com/look/</span><br><span class="line"></span><br><span class="line">4.github查找：https://github.com/search?q=cms识别</span><br><span class="line"></span><br><span class="line">5.whatcms：whatweb bbs.zkaq.cn</span><br><span class="line"></span><br><span class="line">6.cmsIdentification：python cmsIdentification.py https://bbs.zkaq.cn/</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、关于IP"><a href="#二、关于IP" class="headerlink" title="二、关于IP"></a>二、关于IP</h3><h5 id="1-CDN"><a href="#1-CDN" class="headerlink" title="1.CDN"></a>1.CDN</h5><ul>
+<li>CDN可以说是一种资源服务器，不仅可以加速网站访问，还可以提供waf服务，如防止cc攻击，SQL注入拦截等多种功能，除此之外，还可以隐藏服务器的真实IP，cdn服务会根据你所在的地区，选择合适的线路给予你访问，所以如何绕过CDN就十分重要了。</li>
+</ul>
+<h6 id="a-CDN检测"><a href="#a-CDN检测" class="headerlink" title="a.CDN检测"></a>a.CDN检测</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用全球ping：不同的地区访问有着不同的IP，这样就确定了该域名使用了cdn了</span><br><span class="line"></span><br><span class="line">    http://ping.chinaz.com/</span><br><span class="line"></span><br><span class="line">    https://ping.aizhan.com/</span><br><span class="line"></span><br><span class="line">    https://www.17ce.com/</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-CDN绕过"><a href="#b-CDN绕过" class="headerlink" title="b.CDN绕过"></a>b.CDN绕过</h6><ul>
+<li>绕过的核心还是hosts绑定，当发现ip后，可以尝试nc端口探测，也可以用nmap进行服务探测，如果像正常的服务器，就可以模糊确定是真实IP。若发现真实ip，可进行hosts绑定，绕过CDN的防御，直接发起渗透，也可以进行IP反查，通过反查的网站来渗透。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1. 国外dns获取真实IP：部分cdn只针对国内的ip访问，如果国外ip访问域名 即可获取真实IP。</span><br><span class="line"></span><br><span class="line">    https://www.wepcc.com/</span><br><span class="line"></span><br><span class="line">    http://www.ab173.com/dns/dns_world.php</span><br><span class="line"></span><br><span class="line">    https://dnsdumpster.com/</span><br><span class="line"></span><br><span class="line">    https://who.is/whois/zkaq.cn</span><br><span class="line"></span><br><span class="line">2. DNS历史绑定记录</span><br><span class="line"></span><br><span class="line">    https://dnsdb.io/zh-cn/  # DNS查询，查看A记录有哪些，需要会员。</span><br><span class="line"></span><br><span class="line">    https://x.threatbook.cn/ # 微步在线，需要登录。</span><br><span class="line"></span><br><span class="line">    https://viewdns.info/ # DNS、IP等查询。</span><br><span class="line"></span><br><span class="line">    https://tools.ipip.net/cdn.php # CDN查询IP</span><br><span class="line"></span><br><span class="line">    https://sitereport.netcraft.com/ # 记录网站的历史IP解析记录</span><br><span class="line"></span><br><span class="line">    https://site.ip138.com/ # 记录网站的历史IP解析记录</span><br><span class="line"></span><br><span class="line">3. 被动获取：让目标连接我们获得真实IP。比如网站有编辑器可以填写远程URL图片，或者有SSRF漏洞。</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-主机发现"><a href="#2-主机发现" class="headerlink" title="2.主机发现"></a>2.主机发现</h5><h6 id="a-二层发现"><a href="#a-二层发现" class="headerlink" title="a.二层发现"></a>a.二层发现</h6><ul>
+<li>主要利用arp协议，速度快，结果可靠，不过只能在同网段内的主机。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">arping工具：arping 192.168.1.2 -c 1 </span><br><span class="line"></span><br><span class="line">nmap工具：192.168.1.1-254 –sn</span><br><span class="line"></span><br><span class="line">netdiscover -i eth0 -r 192.168.1.0/24</span><br><span class="line"></span><br><span class="line">scapy工具：sr1(ARP(pdst=&quot;192.168.1.2&quot;))</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-三层发现"><a href="#b-三层发现" class="headerlink" title="b.三层发现"></a>b.三层发现</h6><ul>
+<li>主要利用ip、icmp协议，速度快但没有二层发现快，可以经过路由转发，理论上可以探测互联网上任意一台存活主机，但很容易被边界防火墙过滤。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ping工具：ping 192.168.1.2 –c 2</span><br><span class="line"></span><br><span class="line">fping工具：fping 192.168.1.2 -c 1</span><br><span class="line"></span><br><span class="line">Hping3工具：hping3 192.168.1.2 --icmp -c 2</span><br><span class="line"></span><br><span class="line">Scapy工具：sr1(IP(dst=&quot;192.168.1.2&quot;)/ICMP())</span><br><span class="line"></span><br><span class="line">nmap工具：nmap -sn 192.168.1.1-255</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-四层发现"><a href="#c-四层发现" class="headerlink" title="c.四层发现"></a>c.四层发现</h6><ul>
+<li>主要利用tcp、udp协议，速度比较慢，但是结果可靠，可以发现所有端口都被过滤的存活主机，不太容易被防火墙过滤。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Scapy工具：</span><br><span class="line"></span><br><span class="line">    sr1(IP(dst=&quot;192.168.1.2&quot;)/TCP(dport=80,flags=&#x27;A&#x27;) ,timeout=1))  #tcp发现</span><br><span class="line"></span><br><span class="line">    sr1(IP(dst=&quot;192.168.1.2&quot;)/UDP(dport=33333),timeout=1,verbose=1)  #udp发现</span><br><span class="line"></span><br><span class="line">nmap工具：</span><br><span class="line"></span><br><span class="line">    nmap 192.168.1.1-254 -PA80 –sn #tcp发现</span><br><span class="line"></span><br><span class="line">    nmap 192.168.1.1-254 -PU53 -sn #udp发现 </span><br><span class="line"></span><br><span class="line">hping3工具：</span><br><span class="line"></span><br><span class="line">    hping3 192.168.1.1 -c 1 #tcp发现</span><br><span class="line"></span><br><span class="line">    hping3 --udp 192.168.1.1 -c 1 #udp发现</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-操作系统识别"><a href="#3-操作系统识别" class="headerlink" title="3.操作系统识别"></a>3.操作系统识别</h5><ul>
+<li>知道目标存活主机的操作系统后，可以依据操作系统来实施针对性的渗透测试。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.TTL值：Windows(65~128)，Linux/Unix(1-64)，某些Unix(255)</span><br><span class="line"></span><br><span class="line">2.nmap工具：nmap 192.168.1.1 -O</span><br><span class="line"></span><br><span class="line">3.xprobe2工具：xprobe2 192.168.1.1</span><br><span class="line"></span><br><span class="line">4.p0f工具：使用后，直接访问目标即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-端口扫描"><a href="#4-端口扫描" class="headerlink" title="4.端口扫描"></a>4.端口扫描</h5><ul>
+<li>端口探测可以发现目标服务器上开启的网络服务以及应用程序，这些都是更具体的一些攻击面。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080932689.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">scapy工具：</span><br><span class="line"></span><br><span class="line">    sr1(IP(dst=&quot;192.168.1.1&quot;)/UDP(dport=53),timeout=1,verbose=1)    # UDP端口扫描</span><br><span class="line"></span><br><span class="line">    sr1(IP(dst=&quot;192.168.1.1&quot;)/TCP(dport=80),timeout=1,verbose=1)    # TCP端口扫描</span><br><span class="line"></span><br><span class="line">nmap工具：</span><br><span class="line"></span><br><span class="line">    nmap -sU 192.168.1.1 -p 53  # UDP端口扫描</span><br><span class="line"></span><br><span class="line">    nmap -sS 192.168.1.1 -p 80  # 半连接tcp扫描</span><br><span class="line"></span><br><span class="line">    nmap -sT 192.168.1.1 -p 80 # 全连接TCP扫描</span><br><span class="line"></span><br><span class="line">    nmap 192.168.1.1 -sI 192.168.1.2 -Pn -p 0-100 # 僵尸扫描</span><br><span class="line"></span><br><span class="line">dmitry工具：dmitry -p 192.168.1.1</span><br><span class="line"></span><br><span class="line">nc工具：nc -nv -w 1 -z 192.168.1.1 1-100</span><br><span class="line"></span><br><span class="line">hping3工具：hping3 192.168.1.1 --scan 0-65535 -S</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-服务探测"><a href="#5-服务探测" class="headerlink" title="5.服务探测"></a>5.服务探测</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">nc工具：nc -nv 192.168.1.1 22</span><br><span class="line"></span><br><span class="line">dmitry工具：dmitry -pb 192.168.1.1</span><br><span class="line"></span><br><span class="line">nmap工具：</span><br><span class="line"></span><br><span class="line">    nmap -sT 192.168.1.1 -p 22 --script=banner    </span><br><span class="line"></span><br><span class="line">    nmap 192.168.1.1 -p 80 -sV</span><br><span class="line"></span><br><span class="line">amap工具：</span><br><span class="line"></span><br><span class="line">    amap -B 192.168.1.1 1-65535 | grep on</span><br><span class="line"></span><br><span class="line">    amap 192.168.1.1 20-30 -qb</span><br></pre></td></tr></table></figure>
+
+<h6 id="a-SNMP服务"><a href="#a-SNMP服务" class="headerlink" title="a.SNMP服务"></a>a.SNMP服务</h6><ul>
+<li>SNMP是简单网络管理协议，由于经常被管理员错误配置，导致很容易造成系统的信息泄露，可以说是“信息的金矿”。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">onesixtyone工具：onesixtyone 192.168.1.1 public </span><br><span class="line"></span><br><span class="line">snmpwalk工具：snmpwalk 192.168.1.1 -c public -v 2c</span><br><span class="line"></span><br><span class="line">snmpcheck工具：snmpcheck -t 192.168.1.1 -c private -v 2</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-SMB服务"><a href="#b-SMB服务" class="headerlink" title="b.SMB服务"></a>b.SMB服务</h6><ul>
+<li>smb是一个协议名，它能被用于Web连接和客户端与服务器之间的信息沟通。默认开放，实现复杂，实现文件共享，这也是微软历史上出现安全问题最多的一个协议。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nmap工具：nmap -v -p139,445 --script=smb-check-vulns --script-args=unsafe=1 192.168.1.1</span><br><span class="line"></span><br><span class="line">nbtscan工具：-r 192.168.1.0/24</span><br><span class="line"></span><br><span class="line">enum4linux工具：enum4linux -a 192.168.1.1</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-SMTP服务"><a href="#c-SMTP服务" class="headerlink" title="c.SMTP服务"></a>c.SMTP服务</h6><ul>
+<li>SMTP是一种提供可靠且有效的电子邮件传输的协议。如果能发现目标系统的邮箱账号，那么可以进行相关的攻击，比如钓鱼等。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nc工具：nc -nv 192.168.1.1 25</span><br><span class="line"></span><br><span class="line">nmap工具：nmap smtp.163.com -p25 --script=smtp-open-relay.nse</span><br><span class="line"></span><br><span class="line">smtp-user-enum工具：smtp-user-enum -M VRFY -U users.txt -t 192.168.1.1</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-其他识别"><a href="#6-其他识别" class="headerlink" title="6.其他识别"></a>6.其他识别</h5><ul>
+<li>一些杂项识别，总之，信息收集就是收集有关目标系统的一切。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">防火墙识别：nmap -sA 172.16.36.135 -p 22</span><br><span class="line"></span><br><span class="line">负载均衡识别：lbd bbs.zkaq.cn</span><br><span class="line"></span><br><span class="line">WAF识别：nmap bbs.zkaq.cn --script=http-waf-detect.nse</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、其他技术"><a href="#三、其他技术" class="headerlink" title="三、其他技术"></a>三、其他技术</h3><h5 id="1-搜索引擎"><a href="#1-搜索引擎" class="headerlink" title="1.搜索引擎"></a>1.搜索引擎</h5><h6 id="a-Google语法"><a href="#a-Google语法" class="headerlink" title="a.Google语法"></a>a.Google语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+充值 -支付：+代表必须带关键字，-代表必须减去关键字</span><br><span class="line"></span><br><span class="line">“充值 支付”：双引号内的内容，进行一个整体搜索</span><br><span class="line"></span><br><span class="line">inurl：?id：URL中必须带?id</span><br><span class="line"></span><br><span class="line">intitle：充值：网站标题中必须有充值</span><br><span class="line"></span><br><span class="line">intext：充值：网站正文中必须有充值</span><br><span class="line"></span><br><span class="line">filetype：pdf：找pdf文件</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-Shodon语法"><a href="#b-Shodon语法" class="headerlink" title="b.Shodon语法"></a>b.Shodon语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Net:8.8.8.8 # 查询ip的相关的主机信息，也可以直接搜网段</span><br><span class="line"></span><br><span class="line">City:Beijing # 查询城市为北京的设置</span><br><span class="line"></span><br><span class="line">Country:CN # 查询属于中国的设备 。CN中国</span><br><span class="line"></span><br><span class="line">Port:80 # 查询指定开放端口的设备。</span><br><span class="line"></span><br><span class="line">Os:windows # 指定操作系统</span><br><span class="line"></span><br><span class="line">Hostname:baidu.com # 搜索主机或域名为baidu.com的主机或设备</span><br><span class="line"></span><br><span class="line">Server:Apache # 指定中间件</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-Fofa语法"><a href="#c-Fofa语法" class="headerlink" title="c.Fofa语法"></a>c.Fofa语法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1、同IP旁站：ip=&quot;192.168.0.1“</span><br><span class="line"></span><br><span class="line">2、C段：ip=&quot;192.168.0.0/24“</span><br><span class="line"></span><br><span class="line">3、子域名：domain=&quot;baidu.com“</span><br><span class="line"></span><br><span class="line">4、标题/关键字：title=&quot;百度“</span><br><span class="line"></span><br><span class="line">5、如果需要将结果缩小到某个城市的范围，那么可以拼接语句</span><br><span class="line"></span><br><span class="line"> title=&quot;百度&quot;&amp;&amp; region=&quot;Beijing“</span><br><span class="line"></span><br><span class="line">6.特征：body=&quot;百度&quot;或header=&quot;baidu&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-whois查询"><a href="#2-whois查询" class="headerlink" title="2.whois查询"></a>2.whois查询</h5><ul>
+<li>注册域名的时候留下的信息。比如域名注册人的邮箱、电话号码、姓名等。根据这些信息可以尝试制作社工密码，或者查出更多的资产等等，也可以反查注册人，邮箱，电话，机构及更多的域名。</li>
+</ul>
+<h6 id="a-在线网站查询"><a href="#a-在线网站查询" class="headerlink" title="a.在线网站查询"></a>a.在线网站查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">站长之家域名WHOIS信息查询地址：http://whois.chinaz.com/</span><br><span class="line"></span><br><span class="line">爱站网域名WHOIS信息查询地址 https://whois.aizhan.com/</span><br><span class="line"></span><br><span class="line">腾讯云域名WHOIS信息查询地址 https://whois.cloud.tencent.com/</span><br><span class="line"></span><br><span class="line">美橙互联域名WHOIS信息查询地址 https://whois.cndns.com/</span><br><span class="line"></span><br><span class="line">爱名网域名WHOIS信息查询地址 https://www.22.cn/domain/</span><br><span class="line"></span><br><span class="line">易名网域名WHOIS信息查询地址 https://whois.ename.net/</span><br><span class="line"></span><br><span class="line">中国万网域名WHOIS信息查询地址 https://whois.aliyun.com/</span><br><span class="line"></span><br><span class="line">西部数码域名WHOIS信息查询地址 https://whois.west.cn/</span><br><span class="line"></span><br><span class="line">新网域名WHOIS信息查询地址 http://whois.xinnet.com/domain/whois/index.jsp</span><br><span class="line"></span><br><span class="line">纳网域名WHOIS信息查询地址 http://whois.nawang.cn/</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-反查邮箱"><a href="#b-反查邮箱" class="headerlink" title="b.反查邮箱"></a>b.反查邮箱</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">福人：https://bbs.fobshanghai.com/checkemail.html</span><br><span class="line"></span><br><span class="line">whois反查：https://www.benmi.com/rwhois</span><br><span class="line"></span><br><span class="line">站长工具：http://whois.chinaz.com/reverse?ddlSearchMode=1</span><br></pre></td></tr></table></figure>
+
+<h6 id="c-注册人反查"><a href="#c-注册人反查" class="headerlink" title="c.注册人反查"></a>c.注册人反查</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注册人查询：www.reg007.com </span><br><span class="line"></span><br><span class="line">站长工具：http://whois.chinaz.com/reverse?ddlSearchMode=1</span><br></pre></td></tr></table></figure>
+
+<h6 id="d-备案查询"><a href="#d-备案查询" class="headerlink" title="d.备案查询"></a>d.备案查询</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">天眼查 https://www.tianyancha.com/</span><br><span class="line"></span><br><span class="line">爱站备案查询https://icp.aizhan.com/</span><br><span class="line"></span><br><span class="line">域名助手备案信息查询 http://cha.fute.com/index</span><br><span class="line"></span><br><span class="line">站长工具：http://icp.chinaz.com/</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-隐藏域名hosts碰撞"><a href="#3-隐藏域名hosts碰撞" class="headerlink" title="3.隐藏域名hosts碰撞"></a>3.隐藏域名hosts碰撞</h5><ul>
+<li>一般来说，通过ip直接访问目标，要比通过域名来访问目标网站，得到的信息会更多。但如果域名绑定过多个ip的话，管理员出现配置上的失误，是会导致一些敏感信息泄露的，那么这种情况就可以通过域名+ip捆绑的形式进行碰撞，收集目标公司资产的域名以及解析过的所有ip，将他们一对多的形式进行碰撞，能发现一些很有意思的东西出现。</li>
+</ul>
+<p>hosts碰撞参考文章：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg5NTU4ODE1MA==&mid=2247483751&idx=1&sn=42dd50ffca3a799de179ef9714fb143d&scene=21#wechat_redirect">https://mp.weixin.qq.com/s/fuASZODw1rLvgT7GySMC8Q</a></p>
+<hr>
+<h3 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h3><p>常见Web源码泄露总结：<a target="_blank" rel="noopener" href="https://www.secpulse.com/archives/55286.html">https://www.secpulse.com/archives/55286.html</a></p>
+<p>github 关键词监控：<a target="_blank" rel="noopener" href="https://www.codercto.com/a/46640.html">https://www.codercto.com/a/46640.html</a></p>
+<p>利用GitHub搜索敏感信息：<a target="_blank" rel="noopener" href="http://www.361way.com/github-hack/6284.html">http://www.361way.com/github-hack/6284.html</a></p>
+<p>Github 泄露扫描系统：<a target="_blank" rel="noopener" href="https://www.oschina.net/p/x-patrol?hmsr=aladdin1e1">https://www.oschina.net/p/x-patrol?hmsr=aladdin1e1</a></p>
+<p>监控github代码库：<a target="_blank" rel="noopener" href="https://github.com/0xbug/Hawkeye">https://github.com/0xbug/Hawkeye</a></p>
+<p>Goby工具：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Alexhcf/article/details/105109362">https://blog.csdn.net/Alexhcf/article/details/105109362</a></p>
+<p>cms识别工具cmsIdentification：<a target="_blank" rel="noopener" href="https://github.com/theLSA/cmsIdentification/">https://github.com/theLSA/cmsIdentification/</a></p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>

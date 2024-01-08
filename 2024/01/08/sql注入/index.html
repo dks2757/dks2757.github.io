@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            sql注入
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>​    SQL注入即是指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/2498090?fromModule=lemma_inlink">web应用程序</a>对用户输入数据的合法性没有判断或过滤不严，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SQL%E8%AF%AD%E5%8F%A5/5714895?fromModule=lemma_inlink">SQL语句</a>，在管理员不知情的情况下实现非法操作，以此来实现欺骗<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%8D%E5%8A%A1%E5%99%A8/613818?fromModule=lemma_inlink">数据库服务器</a>执行非授权的任意查询，从而进一步得到相应的数据信息。</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080916488.png" alt="img"></p>
+<p><strong>安装mysql</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080916710.png" alt="img">链接数据库</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080916926.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080916802.png" alt="img"></p>
+<p>第一步，先拿出隐藏数据</p>
+<p>第二步，用union找出返回字段数，写入函数替换，得出库名用户名版本名等</p>
+<p>第三步，根据第二步得到的查表，查表里有哪些字段，得出有用的字段</p>
+<p>第四步，根据有用的字段登录到后台</p>
+<p><strong>判断是否存在sql注入</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080917362.png" alt="img"></p>
+<p>输入一个“单引号”，出现报错说明存在注入漏洞，前端拼接sql数据库</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080917584.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080917132.png" alt="img"></p>
+<p>不满足则说明这是一个字符型注入</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080917985.png" alt="img"></p>
+<p>?id&#x3D;1</p>
+<p>判断闭合点，判断是数字型还是字符型注入<img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703645312524-3d4d8f39-22fb-4c43-afe6-d5095123e3e4.png" alt="img"></p>
+<p>首先知道表格有几列，如果报错就是超过列数，如果显示正常就是没有超出列数，注意此时?id&#x3D;1改为?id&#x3D;-1，改为-1时，该id不存在即不显示，从而执行后面的注入命令<img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080918585.png" alt="img"></p>
+<p>order by &#x3D;4时报错，说明只有3列，不超过就不会报错</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703645614784-f3ade0c4-de8e-47f9-ad9e-6e7bc049de04.png" alt="img"></p>
+<p>接下来爆出显示位，就是看看表格里面那一列是在页面显示的。可以看到是第二列和第三列里面的数据是显示在页面的<img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703645656083-a0d69a86-2019-40ea-aa09-a7682f290399.png" alt="img">获取当前数据名和版本号，这个就涉及mysql数据库的一些函数，记得就行。通过结果知道当前数据看是security,版本是5.7.26<img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703645696130-1c67c76c-3f14-4822-b95a-0a906f12e5cc.png" alt="img"></p>
+<p>information_schema.tables表示该数据库下的tables表，点表示下一级。where后面是条件，group_concat()是将查询到结果连接起来。如果不用group_concat查询到的只有user。该语句的意思是查询information_schema数据库下的tables表里面且table_schema字段内容是security的所有table_name的内容。也就是下面表格user和passwd。</p>
+<p>?id&#x3D;-1’union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;’security’–+</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703646338752-e09a0fff-3077-4c6f-be75-bcb0c62111e6.png" alt="img">爆字段名，我们通过sql语句查询知道当前数据库有四个表，根据表名知道可能用户的账户和密码是在users表中。接下来我们就是得到该表下的字段名以及内容。</p>
+<p>?id&#x3D;-1’union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’–+</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703647472808-7963b5c0-e388-4096-97f5-c3166ebfd224.png" alt="img"></p>
+<p>通过上述操作可以得到两个敏感字段就是username和password,接下来我们就要得到该字段对应的内容。我自己加了一个id可以隔一下账户和密码。</p>
+<p>?id&#x3D;-1’ union select1,2,group_concat(username ,id , password) from users–+<img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703648100001-439f4f1b-428f-4cb6-a640-48dc2948e3bd.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703666910502-4e93b36c-796d-4f08-b412-0e6f9a716996.png" alt="img"></p>
+<p>第五关</p>
+<p>没有回显，用报错注入，此处不报错，说明字节长度小于9</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703680736810-a21ca455-f299-401a-a9ef-40a32dcbafde.png" alt="img"></p>
+<p>直接报错注入</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/40675564/1703682279988-d23ac011-df51-4c8d-af10-e854ad7cc8b2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919652.png" alt="img"></p>
+<p>内部拼接，拼接成两个语句</p>
+<p>内部拼接</p>
+<p>联合查询</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919773.png" alt="img"></p>
+<p>示例</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919358.png" alt="img"></p>
+<p>参数污染，基于浏览器，php代码默认取最后一个参数</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919487.png" alt="img"></p>
+<p>示例</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919217.png" alt="img"></p>
+<p>示例谷歌</p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919704.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919105.png" alt="img"></p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
