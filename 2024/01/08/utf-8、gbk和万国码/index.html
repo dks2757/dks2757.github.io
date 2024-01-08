@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            utf-8、gbk和万国码
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>​    <strong>回顾昨天所讲提到的”锟斤拷锟斤拷“乱码，所以我今天想复习一下带大家之前python网课中学到的编码字符集知识。</strong></p>
+<p><strong>字符集和编码</strong></p>
+<p>​    <strong>数据导入导出，以后我们后面要学到的爬虫等都与这息息相关，在我们日常生活的电子产品内部逻辑的0和1，他们的0和1是通过无数个二极管，通电放电，低电频高电频来实现的，这些无数个0和1，再通过数学转换成由0和1组成的数组，再二进制转化成十进制，这样转变成人们看得懂的数字。那么储存数字解决了，如何用0和1来储存文字信息呢，人们便想到了用密码本，通过特定的01数组来转换对应文字，形成一个互换的关系。</strong></p>
+<p>​    <strong>于是在发展的初期，开始出现了很多种”密码本“，最后由美国统一制定了一个标准，也就是大家现在所熟知的ASCII编码，这就是ASCII码的由来，ASCII码一共编排了128个文字符号，只用到了7个0和1，增加第八位作为未来拓展的预留位。</strong></p>
+<p>​    <strong>但是这128个文字符号远远不能满足中国、日本等国家的需求，于是科学家们又制定了一个ANSI标准，从八位字符扩充至十六位字符，可以容纳下65536种字符，由此也就形成了最早版本的gbk-gb2312编码，但是这65535种字符中还是有一些生僻字没有收录进去，这也是为什么有些字符，在手机上电脑上打不出来的原因。</strong></p>
+<p>​    <strong>后来随着文化发展，人们对gb2331再次进行了扩充，也就是现在正在使用的gbk编码，windows默认使用的也是gbk编码。</strong></p>
+<p>​     <strong>但是此时又出现了一个问题，在新制定的ANSI标准下，中国和日本等国家编码不互通，就会出现以下情况</strong><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080942548.png" alt="img"></p>
+<p>​    <strong>这也是为什么同一个游戏，以英雄联盟为例，却分为国服台服日服韩服等划分，究其根本是因为底层的编码不互通。</strong></p>
+<p>​    <strong>为了解决这个问题，国际组织决定把所有国家文字涵盖在一起，Unicode因此诞生，也就是俗称的万国码，新出现的Unicode被扩充到了4个字节，32个字符，超长的字符长度需要更多的存储空间和存储时间，因此储存消耗、储存时间成本大大提升。</strong></p>
+<p>​    <strong>为了解决这个问题，utf应运而生，utf也就是可变长度的unicode，分为utf-8和utf-16，常用于utf-8，utf-8是mac默认的编码方式。</strong><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080942553.png" alt="img"></p>
+<p>​    <strong>所以大家会发现，相比于英文文件，储存一个纯中文文件所需要的空间更大，也是因为这个原因，由此，编码不互通的问题被解决。</strong></p>
+<p><strong>补充：</strong></p>
+<p><strong>美国ASCII&#x3D;&gt;gbk：gbk是由ASCII码演化过来的</strong></p>
+<p><strong>国际组织Unicode &#x3D;&gt; utf-8 :utf-8是由unicode演化而来的，gbk和utf两者不互通，因为这是由两套标准演化除的，不能直接进行转化，需要中间介质衔接，这也是为什么在之前的一些实操中，出现’锟斤拷锟斤拷锟斤拷锟斤拷‘乱码后需要编辑文档，将文档中的编码方式utf-8改为gbk，或者gbk改成utf-8。</strong></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080942231.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080942875.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401080942872.png" alt="img"></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
