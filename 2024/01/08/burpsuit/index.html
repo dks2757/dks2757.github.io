@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            Burpsuit
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>搭建框架</p>
+<p><img src="/burpsuit.assets/1704646770523-f537ef89-f8b8-4d7f-b455-b58534f29ea0.png" alt="img"></p>
+<p>1.1,SQL注入是什么?</p>
+<p>SQL注入是一种常见的安全漏洞，它允许攻击者通过将恶意的SQL代码插入到应用程序的输入字段中来执行非授权的数据库操作。</p>
+<p>1.2,SQL注入的原理是什么?</p>
+<p>SQL注入的原理是利用应用程序没有对用户输入进行充分的验证和过滤，攻击者可以通过输入特殊字符或者SQL语句片段来改变原始的SQL查询语句的逻辑。</p>
+<p>1.3,攻击者可以获取到什么信息?</p>
+<p>攻击者可以利用SQL注入进行各种恶意操作，包括获取敏感数据、修改、删除或插入数据，或者执行其他任意的SQL语句。</p>
+<p>1.4,开发人员如何防范</p>
+<p>使用参数化查询或预编译语句：确保应用程序将用户输入作为参数传递给SQL查询，而不是将其直接插入到查询字符串中。</p>
+<p>输入验证和过滤：对于所有用户输入的数据，进行验证和过滤，确保其符合预期的格式和结构，以防止恶意注入。</p>
+<p>最小化权限：在数据库中，为应用程序使用的数据库账号分配最小化的权限，只赋予执行必要操作的权限，这样即使发生注入攻击，也能尽量减小损害。</p>
+<p>定期更新和维护：及时更新数据库和应用程序的补丁，以修复已知的安全漏洞。</p>
+<p>2，phpStudy准备</p>
+<p>这里是有新版和旧版两种方式去解决的</p>
+<p>2.1旧版准备</p>
+<p>下载后为一个exe文件进行运行,然后选择要安装的位置就可以了</p>
+<p>阿里云盘分享</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/akYNRzRH4bN">https://www.aliyundrive.com/s/akYNRzRH4bN</a></p>
+<p>2.2,新版准备</p>
+<p>​                          这里可以去看我的另一篇文章,里面有最新版的安装操作</p>
+<p>​            这里我也就不去截新图了,直接就从之前的文章截了一下,然后沾过来了</p>
+<p>​                                 什么是web与搭建自己的第一个pikachu靶场</p>
+<p><a target="_blank" rel="noopener" href="http://t.csdn.cn/YJ7WB">http://t.csdn.cn/YJ7WB</a></p>
+<p><img src="/burpsuit.assets/1704646817154-e5b7262f-21f0-4cc3-a7bd-f6628d64d677.png" alt="img"></p>
+<p>3，sqli-labs源码准备</p>
+<p>​                              可以在github进行下载,也可以在我的网盘进行下载</p>
+<p>​                             <a target="_blank" rel="noopener" href="https://codeload.github.com/Audi-1/sqli-labs/zip/master">https://codeload.github.com/Audi-1/sqli-labs/zip/master</a></p>
+<p><a target="_blank" rel="noopener" href="https://codeload.github.com/Audi-1/sqli-labs/zip/master">https://codeload.github.com/Audi-1/sqli-labs/zip/master</a></p>
+<p>sqli-labs-master.zip官方版下载丨最新版下载丨绿色版下载丨APP下载-123云盘</p>
+<p>123云盘为您提供sqli-labs-master.zip最新版正式版官方版绿色版下载,sqli-labs-master.zip安卓版手机版apk免费下载安装到手机,支持电脑端一键快捷安装</p>
+<p><a target="_blank" rel="noopener" href="https://www.123pan.com/s/9CetVv-hkpw.html%E6%8F%90%E5%8F%96%E7%A0%81:2175">https://www.123pan.com/s/9CetVv-hkpw.html提取码:2175</a></p>
+<p>4.将下载的靶场放置到WWW根目录下</p>
+<p>​          新版的具体的直接看我之前写的文章里面有详细的讲解,怎么放置和解压</p>
+<p>什么是web与搭建自己的第一个pikachu靶场</p>
+<p><a target="_blank" rel="noopener" href="http://t.csdn.cn/YJ7WB">http://t.csdn.cn/YJ7WB</a></p>
+<p>​                               这里我讲解一下旧版的,怎么确定和进行</p>
+<p>​                  打开工具后,我们先点击其他选项菜单,然后点击网站根目录</p>
+<p><img src="/burpsuit.assets/1704646837731-860bff25-ed83-4b2a-910d-c8759344d6a3.png" alt="img"></p>
+<p>​                                                  然后我们将靶场解压到这个目录下 </p>
+<p><img src="/burpsuit.assets/1704646843351-52c68ee4-b584-4674-b91e-51cbc7c64ec8.png" alt="img"></p>
+<p>5.修改配置信息</p>
+<p>用文本编辑器打开路径 某盘:\phpstudy\PHPTutorial\WWW\sqli-labs-master\sql-connections 下的db-creds.inc，然后修改密码为root，这里的密码要跟phpstudy里的php数据库的用户密码(默认为root)对上。</p>
+<p>​                                旧版不用管,就改root就完了,然后就不用管了 </p>
+<p><img src="/burpsuit.assets/1704646853873-74a01782-d79f-44fd-a913-97e65d38aabb.png" alt="img"></p>
+<p>​                   新版的要确定,红线部分的密码是不是root,不过一般也是默认为root</p>
+<p><img src="/burpsuit.assets/1704646863974-eee203ce-142a-4c98-9042-62e40d7d8910.png" alt="img"></p>
+<p>6.数据库初始化</p>
+<p>以上步骤完成后输入127.0.0.1或者127.0.0.1&#x2F;sqli-labs-master&#x2F;进入靶场，点击下方所指示的，初始化数据库<img src="/burpsuit.assets/1704646872874-e2d887f5-6c00-409f-b273-db853d4bee9b.png" alt="img"></p>
+<p>​                                         出现下面的信息代表,代表靶场安装成功</p>
+<p><img src="/burpsuit.assets/1704646879773-5999eb12-6eb2-42e4-a621-7d479b452501.png" alt="img"></p>
+<p>​                              点击图片中的红框就可以进行,SQL注入的练习了 </p>
+<p><img src="/burpsuit.assets/1704646887041-fa9a1784-3bda-4fe6-b5ba-67e251b855af.png" alt="img"></p>
+<p>7.在新版的phpstudy搭建时会出现的问题</p>
+<p><img src="/burpsuit.assets/1704646893811-4ba37960-80b8-4e84-8a89-606cbd66556a.png" alt="img"></p>
+<p>7.1,PHP版本降级 </p>
+<p>因为php7版本以上抛弃了mysql_系列函数，转用mysqli系列函数，所以用php7版本以上安装的时候就会报错,我们需要为php降个级 <img src="/burpsuit.assets/1704646899230-360725b4-ebf7-46dc-8fc1-b920a813b0c3.png" alt="img"></p>
+<p>依次按照图中所示进行操作,最后进行版本更换,这里因为是我是在虚拟机里搭建的,所以无法进行安装和使用旧版的php,所以如果是在本机搭建的话,应该可以成功.</p>
+<p>7.2,避免端口冲突</p>
+<p>​    如果有已经建成的网站，须将sqli-labs的端口与其避开,这样才不会出现端口冲突</p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
