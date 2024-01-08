@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        Hexo
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            支付逻辑漏洞
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h1 id="一、什么是支付逻辑漏洞："><a href="#一、什么是支付逻辑漏洞：" class="headerlink" title="一、什么是支付逻辑漏洞："></a>一、什么是支付逻辑漏洞：</h1><p>支付逻辑漏洞是指系统的支付流程中存在业务逻辑层面的漏洞,支付漏洞是 高风险漏洞 也属于 逻辑漏洞，通常是通过 篡改价格、数量、状态、接口、用户名等传参，从而造成 小钱够买大物 甚至可能造成 0元购买商品 等等，凡是 涉及购买、资金等方面的功能处 就有可能存在支付漏洞。</p>
+<h1 id="二、常见支付流程："><a href="#二、常见支付流程：" class="headerlink" title="二、常见支付流程："></a>二、常见支付流程：</h1><p>选择商品和数量——选择支付及配送方式——生成订单编号——订单支付选择——完成支付。<br>如：最常见的支付逻辑漏洞通常是由于服务器端没有对客户端请求数据中的金额、数量等敏感信息进行效验导致。一般漏洞产生在电子商务类应用中,这里是以贝锐的商城进行举例的。</p>
+<h1 id="三、支付逻辑漏洞一般分为四类："><a href="#三、支付逻辑漏洞一般分为四类：" class="headerlink" title="三、支付逻辑漏洞一般分为四类："></a>三、支付逻辑漏洞一般分为四类：</h1><p>1.支付过程中可以修改支付金额<br>2.可以将订单中的商品数量修改为负值。<br>3.请求重放导致<br>4.其他问题（程序异常，其他参数修改导致问题等）<br>其他支付问题补充：<br>修改支付状态、修改附属值（优惠券积分等）、修改支付接口、替换多个订单、重复支付等。发票越权,并发,也可能也能修改金额。</p>
+<h1 id="四、测试方法与修复方法"><a href="#四、测试方法与修复方法" class="headerlink" title="四、测试方法与修复方法:"></a>四、测试方法与修复方法:</h1><p>支付逻辑漏洞之修改订单数量：<br>1、登录网站，选择购买一个商品并抓取数据包。<br>2、找到其中代表商品数量的参数，将参数的值修改为负数,或者修改商品的pid。<br>3、发送数据包，生成订单，观察订单是否有效，是否能进入支付页面。<br>4、完成支付。<br>可以从这4个方面的每一步单独入手验证是否存在漏洞。</p>
+<h1 id="五-举例："><a href="#五-举例：" class="headerlink" title="五.举例："></a>五.举例：</h1><h2 id="1-登录贝锐的商城发现以下7个漏洞"><a href="#1-登录贝锐的商城发现以下7个漏洞" class="headerlink" title="1.登录贝锐的商城发现以下7个漏洞:"></a>1.登录贝锐的商城发现以下7个漏洞:</h2><p> 实现零元购:<br>1.参数包里面没有价格，或者价格跟商品id校验，导致无法修复商品金额。<br>2.掩藏商品的模糊测试，商品id，换参数包直接改。<br>出现第1个的原因主要是商品下单的处导致。<br>出现第2个的原因主要是商品购买处导致。<br>3.购物单未校验加入零元购商品。<br>第3个主要是支付宝接口和商品接口未校验导致商品任意购买。<br>6.商品数量校验导致零元购。<br>7.附带商品导致支付漏洞主要是在免费的商品或者增送的商品上做文章,可能通过修改它们的数量从而产生漏洞。</p>
+<h2 id="2-通过支付宝和微信的校验缺点对某一个文库进行充值"><a href="#2-通过支付宝和微信的校验缺点对某一个文库进行充值" class="headerlink" title="2.通过支付宝和微信的校验缺点对某一个文库进行充值:"></a>2.通过支付宝和微信的校验缺点对某一个文库进行充值:</h2><p>8.四舍五入导致支付漏洞  系统支付和微信的支付校验导致(提现)  0.009可以变成0.01<br><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651152.png" alt="image.png"><br>进行充值界面的抓包,将0.01改成0.009。<br><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651662.png" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/40666686/1704640760997-274cc9ef-ed41-4919-8ba1-135b349e0950.png#averageHue=%23f3f2f1&clientId=u75bf778e-08fd-4&from=paste&height=462&id=u61e882be&originHeight=577&originWidth=1262&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=179117&status=done&style=none&taskId=u00145e8b-3ea0-4f01-bd67-7e89d4e5acf&title=&width=1009.6" alt="image.png"></p>
+<p>这里微信和支付宝对支付的金额进行了校验,但是只到了小数点的第二位,如果出现第三位会采用四舍五入的方法强行进行校验。</p>
+<h2 id="3-芒果书城的漏洞"><a href="#3-芒果书城的漏洞" class="headerlink" title="3.芒果书城的漏洞:"></a>3.芒果书城的漏洞:</h2><p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651462.png" alt="image.png"><br>存在一个修改数量价格就会变化的漏洞,被修复了,还存在一个修改书籍数量就能绕过的一个漏洞,被修复了。</p>
+<h2 id="4-贝锐微商城"><a href="#4-贝锐微商城" class="headerlink" title="4.贝锐微商城:"></a>4.贝锐微商城:</h2><p>使用过红包的订单，有一个支付宝的订单号，有效期是15分钟，商家对接支付宝，取消订单，红包返回，无限使用<br><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651094.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651567.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651969.png" alt="image.png"></p>
+<p>并发需要用到插件,并发之后看长度。<br>并发漏洞(服务器对功能点的多线程处理)：优惠劵，微薄的点赞，关注，取消点赞  优惠商品下单 所有的都能并发。<br>修复方法：<br>1.在请求数据中对对涉及金额、数量等敏感信息进行加密，保证加密算法不可猜解。并在服务器端对其进行校验。<br>2.支付交易请求数据中加入tbken，防止重放攻击。<br>3.支付系统需要实施严格的安全措施，例如验证支付请求的合法性、限制重复支付、验证用户身份、使用加密技术保护数据传输等。此外，定期进行安全审计和漏洞扫描，及时修复发现的漏洞也是重要的措施。<br>4.对于用户而言，保护个人账户安全、使用安全的支付平台、谨慎处理退款请求等也是重要的预防措施。</p>
+<h1 id="六-Fiddler"><a href="#六-Fiddler" class="headerlink" title="六.Fiddler:"></a>六.Fiddler:</h1><p>下载流程:<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mubei1314/article/details/122389950">https://blog.csdn.net/Mubei1314/article/details/122389950</a><br>Fiddler抓包联动burp进行数据分析:<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU2NDM2OTQxMw==&mid=2247484054&idx=1&sn=3440b36b071491a9b7a03e1e293aab57&chksm=fc4d43fccb3acaea94fd6073cba7f68efad9ba21177694ec7599d99cb7330ffa7edf01f80002&scene=27">https://mp.weixin.qq.com/s?__biz&#x3D;MzU2NDM2OTQxMw&#x3D;&#x3D;&amp;mid&#x3D;2247484054&amp;idx&#x3D;1&amp;sn&#x3D;3440b36b071491a9b7a03e1e293aab57&amp;chksm&#x3D;fc4d43fccb3acaea94fd6073cba7f68efad9ba21177694ec7599d99cb7330ffa7edf01f80002&amp;scene&#x3D;27</a><br>使用过程中不要关代理。<br><img src="https://raw.githubusercontent.com/dks2757/tu/main/img/202401081651653.png" alt="image.png"></p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Your Name | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
